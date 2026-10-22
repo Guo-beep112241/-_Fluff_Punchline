@@ -1,0 +1,19 @@
+{
+  "tasks": {
+    "455207129047466": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 6,
+      "ratio": "9:16",
+      "resolution": "2K",
+      "output_file": "10_工作素材/habits/_placeholder/x6_placeholder_adult_behavior_01.mp4",
+      "purpose": "占位定妆视频 — 成年萨摩耶行为参考，供后续按小六二特征做视频编辑",
+      "submitted_at_ms": 1792687645000,
+      "submitted_at_cst": "2026-10-23 00:47:25 CST",
+      "last_query_at_ms": null,
+      "terminal_status": "running",
+      "reference_images": ["x6_placeholder_adult_face_01.jpg"],
+      "notes": "定妆图来源 Unsplash（免费授权），仅作 AI 生成参考输入"
+    }
+  }
+}

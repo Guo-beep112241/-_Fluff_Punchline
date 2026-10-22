@@ -10,15 +10,15 @@
       "purpose": "占位定妆视频 — 成年萨摩耶行为参考，供后续按小六二特征做视频编辑",
       "submitted_at_ms": 1792687645000,
       "submitted_at_cst": "2026-10-23 00:47:25 CST",
-      "last_query_at_ms": 1792692882000,
+      "last_query_at_ms": 1792694113694,
       "terminal_status": "succeeded_delivery_pending",
       "reference_images": [
         "x6_placeholder_adult_face_01.jpg"
       ],
       "notes": "定妆图来源 Unsplash（免费授权），仅作 AI 生成参考输入",
-      "last_query_at_cst": "2026-10-23 02:21:22 CST",
-      "last_error": "503 video ready but could not be prepared for delivery — 第 7 次",
-      "delivery_retry_count": 7,
+      "last_query_at_cst": "2026-10-23 02:35:13 CST",
+      "last_error": "code=503 status=succeeded — the video is ready but could not be prepared for delivery; query the same task_id and model again later and do not submit a new task",
+      "delivery_retry_count": 8,
       "window_deadline_cst": "2026-10-23 02:47:25 CST",
       "diagnosis": "平台侧资产管线整体故障。交叉验证：generate_image 同时报 500 'image post-processing failed'，失败阶段一致；search_images 与 query_video_generation 均正常。即生成成功、后处理交付环节挂。视频在 MiniMax 侧存在，connector 无法打包下载。",
       "bypass_verified": "2026-10-23 已核实：官方控制台 platform.minimax.cn/console 无视频任务/作品列表（仅账户钱包、API 用量、请求管理、资源包、发票管理）；hailuoai.video 为另一产品面，API 任务不出现在其作品库。无旁路可绕，只能等接口恢复后用同一 task_id 重查。"

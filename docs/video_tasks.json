@@ -10,21 +10,25 @@
       "purpose": "占位定妆视频 — 成年萨摩耶行为参考，供后续按小六二特征做视频编辑",
       "submitted_at_ms": 1792687645000,
       "submitted_at_cst": "2026-10-23 00:47:25 CST",
-      "last_query_at_ms": 1792695188694,
-      "terminal_status": "timed_out",
+      "last_query_at_ms": 1792704106680,
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_placeholder_adult_face_01.jpg"
       ],
       "notes": "定妆图来源 Unsplash（免费授权），仅作 AI 生成参考输入",
-      "last_query_at_cst": "2026-10-23 02:53:08 CST",
-      "last_error": "code=503 status=succeeded — the video is ready but could not be prepared for delivery; query the same task_id and model again later and do not submit a new task",
+      "last_query_at_cst": "2026-10-23 05:21:46 CST",
+      "last_error": "",
       "delivery_retry_count": 9,
       "window_deadline_cst": "2026-10-23 02:47:25 CST",
       "timed_out_at_cst": "2026-10-23 02:53:08 CST",
       "timed_out_reason": "2 小时自动检查窗口已到，最后一次查询仍为 503。视频在 MiniMax 侧已生成但取不回，非本项目参数/提示词问题。未重新提交（会重复消耗额度）。",
       "manual_recovery": "随时可手动恢复查询，不额外扣额度：cd ~/Movies/Xiaoliuer && python3 tools/recover_h3_video.py（脚本只查询同一 task_id，绝不 submit）",
       "diagnosis": "平台侧资产管线整体故障。交叉验证：generate_image 同时报 500 'image post-processing failed'，失败阶段一致；search_images 与 query_video_generation 均正常。即生成成功、后处理交付环节挂。视频在 MiniMax 侧存在，connector 无法打包下载。",
-      "bypass_verified": "2026-10-23 已核实：官方控制台 platform.minimax.cn/console 无视频任务/作品列表（仅账户钱包、API 用量、请求管理、资源包、发票管理）；hailuoai.video 为另一产品面，API 任务不出现在其作品库。catalog 中除 matrix 外无第二个视频 provider，确无云端旁路。"
+      "bypass_verified": "2026-10-23 已核实：官方控制台 platform.minimax.cn/console 无视频任务/作品列表（仅账户钱包、API 用量、请求管理、资源包、发票管理）；hailuoai.video 为另一产品面，API 任务不出现在其作品库。catalog 中除 matrix 外无第二个视频 provider，确无云端旁路。",
+      "delivered_at_cst": "2026-10-23 05:21:46 CST",
+      "delivered_file": "10_工作素材/habits/_placeholder/x6_placeholder_adult_behavior_01.mp4",
+      "delivered_bytes": 2939080,
+      "recovery_note": "2026-10-23 05:13 平台资产交付环节已恢复，同一 task_id 成功取回。视频 1440x2560 (2K/9:16)、6.58s、24fps、含 H3 原生 AAC 音轨。全程未重新提交任务，未额外消耗生成额度。"
     }
   }
 }

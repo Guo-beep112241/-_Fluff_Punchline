@@ -112,6 +112,73 @@
       "delivered_at_cst": "2026-10-23 18:34:38 CST",
       "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/10_工作素材/habits/_curated/x6_adult_char_ref_walk_splay_03.mp4",
       "delivered_bytes": 2645625
+    },
+    "455504456335771": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 5,
+      "ratio": "9:16",
+      "resolution": "768P",
+      "output_file": "20_生成结果/ep01/verify/ep01_verify_v1_front_768p.mp4",
+      "purpose": "第0批口型验证 V1 — 正面直视镜头说中文（🔴 高风险）",
+      "submitted_at_ms": 1792760063934,
+      "submitted_at_cst": "2026-10-23 20:54:23 CST",
+      "terminal_status": "submitted",
+      "reference_images": [
+        "x6_adult_face_front_sharp_01",
+        "x6_adult_lying_full_02"
+      ],
+      "prompt_file": "episodes/ep01/prompts/verify_v1_front.md",
+      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",
+      "last_query_at_ms": 1792760063934,
+      "last_query_at_cst": "2026-10-23 20:54:23 CST",
+      "last_error": "",
+      "delivery_retry_count": 0
+    },
+    "455504419930532": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 5,
+      "ratio": "9:16",
+      "resolution": "768P",
+      "output_file": "20_生成结果/ep01/verify/ep01_verify_v2_threequarter_768p.mp4",
+      "purpose": "第0批口型验证 V2 — 3/4 侧脸说中文（🟡 中风险）",
+      "submitted_at_ms": 1792760067819,
+      "submitted_at_cst": "2026-10-23 20:54:27 CST",
+      "terminal_status": "submitted",
+      "reference_images": [
+        "x6_adult_face_front_sharp_01",
+        "x6_adult_stand_threequarter_01",
+        "x6_adult_lying_full_02"
+      ],
+      "prompt_file": "episodes/ep01/prompts/verify_v2_threequarter.md",
+      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",
+      "last_query_at_ms": 1792760067819,
+      "last_query_at_cst": "2026-10-23 20:54:27 CST",
+      "last_error": "",
+      "delivery_retry_count": 0
+    },
+    "455504312938800": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 5,
+      "ratio": "9:16",
+      "resolution": "768P",
+      "output_file": "20_生成结果/ep01/verify/ep01_verify_v3_mouth_covered_768p.mp4",
+      "purpose": "第0批口型验证 V3 — 嘴部被笔与纸堆遮挡（🟢 低风险）",
+      "submitted_at_ms": 1792760072708,
+      "submitted_at_cst": "2026-10-23 20:54:32 CST",
+      "terminal_status": "submitted",
+      "reference_images": [
+        "x6_adult_lying_head_01",
+        "x6_adult_lying_full_02"
+      ],
+      "prompt_file": "episodes/ep01/prompts/verify_v3_mouth_covered.md",
+      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",
+      "last_query_at_ms": 1792760072708,
+      "last_query_at_cst": "2026-10-23 20:54:32 CST",
+      "last_error": "",
+      "delivery_retry_count": 0
     }
   }
 }

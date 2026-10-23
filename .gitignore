@@ -20,9 +20,11 @@
 !10_工作素材/characters/
 10_工作素材/characters/*
 !10_工作素材/characters/_curated/
+!10_工作素材/characters/_placeholder/
 !10_工作素材/habits/
 10_工作素材/habits/*
 !10_工作素材/habits/_curated/
+!10_工作素材/habits/_placeholder/
 !10_工作素材/scenes/
 
 # 3) 生成结果：放行 ep01 下的 shots / verify / reference
@@ -54,7 +56,9 @@
 # 6) 放行上面已纳入版本控制的目录里的媒体文件
 #    （必须排在扩展名规则之后 —— gitignore 是「最后一条匹配生效」）
 !10_工作素材/characters/_curated/**
+!10_工作素材/characters/_placeholder/**
 !10_工作素材/habits/_curated/**
+!10_工作素材/habits/_placeholder/**
 !10_工作素材/scenes/**
 !20_生成结果/ep01/shots/**
 !20_生成结果/ep01/verify/**

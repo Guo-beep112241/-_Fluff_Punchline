@@ -123,17 +123,20 @@
       "purpose": "第0批口型验证 V1 — 正面直视镜头说中文（🔴 高风险）",
       "submitted_at_ms": 1792760063934,
       "submitted_at_cst": "2026-10-23 20:54:23 CST",
-      "terminal_status": "submitted",
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_adult_face_front_sharp_01",
         "x6_adult_lying_full_02"
       ],
       "prompt_file": "episodes/ep01/prompts/verify_v1_front.md",
       "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。 | 注意：本条提交于 2026-10-23 20:54，用的是当时提示词文件的版本；20:58 提示词文件被压缩改写（detailed_description 从 522/525/538 词压到 495/499/496 词），参考图分配、台词、场景设计、变量控制均未变。V3 的实际提交原文已存档于 episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
-      "last_query_at_ms": 1792760063934,
-      "last_query_at_cst": "2026-10-23 20:54:23 CST",
+      "last_query_at_ms": 1792762831759,
+      "last_query_at_cst": "2026-10-23 21:40:31 CST",
       "last_error": "",
-      "delivery_retry_count": 0
+      "delivery_retry_count": 0,
+      "delivered_at_cst": "2026-10-23 21:40:32 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/20_生成结果/ep01/verify/ep01_verify_v1_front_768p.mp4",
+      "delivered_bytes": 686005
     },
     "455504419930532": {
       "model": "MiniMax-H3",
@@ -145,7 +148,7 @@
       "purpose": "第0批口型验证 V2 — 3/4 侧脸说中文（🟡 中风险）",
       "submitted_at_ms": 1792760067819,
       "submitted_at_cst": "2026-10-23 20:54:27 CST",
-      "terminal_status": "submitted",
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_adult_face_front_sharp_01",
         "x6_adult_stand_threequarter_01",
@@ -153,10 +156,13 @@
       ],
       "prompt_file": "episodes/ep01/prompts/verify_v2_threequarter.md",
       "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。 | 参考图已于 2026-10-23 更名（复核发现原文件名与实拍姿态不符）：x6_adult_stand_threequarter_01 → x6_adult_lying_threequarter_01。本条记录保留提交时的旧名，以如实反映当时喂给 H3 的内容。 | 注意：本条提交于 2026-10-23 20:54，用的是当时提示词文件的版本；20:58 提示词文件被压缩改写（detailed_description 从 522/525/538 词压到 495/499/496 词），参考图分配、台词、场景设计、变量控制均未变。V3 的实际提交原文已存档于 episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
-      "last_query_at_ms": 1792760067819,
-      "last_query_at_cst": "2026-10-23 20:54:27 CST",
+      "last_query_at_ms": 1792762834894,
+      "last_query_at_cst": "2026-10-23 21:40:34 CST",
       "last_error": "",
-      "delivery_retry_count": 0
+      "delivery_retry_count": 0,
+      "delivered_at_cst": "2026-10-23 21:40:35 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/20_生成结果/ep01/verify/ep01_verify_v2_threequarter_768p.mp4",
+      "delivered_bytes": 956533
     },
     "455504312938800": {
       "model": "MiniMax-H3",
@@ -168,19 +174,22 @@
       "purpose": "第0批口型验证 V3 — 嘴部被笔与纸堆遮挡（🟢 低风险）",
       "submitted_at_ms": 1792760072708,
       "submitted_at_cst": "2026-10-23 20:54:32 CST",
-      "terminal_status": "submitted",
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_adult_lying_head_01",
         "x6_adult_lying_full_02"
       ],
       "prompt_file": "episodes/ep01/prompts/verify_v3_mouth_covered.md",
       "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。 | 注意：本条提交于 2026-10-23 20:54，用的是当时提示词文件的版本；20:58 提示词文件被压缩改写（detailed_description 从 522/525/538 词压到 495/499/496 词），参考图分配、台词、场景设计、变量控制均未变。V3 的实际提交原文已存档于 episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
-      "last_query_at_ms": 1792760072708,
-      "last_query_at_cst": "2026-10-23 20:54:32 CST",
+      "last_query_at_ms": 1792762838071,
+      "last_query_at_cst": "2026-10-23 21:40:38 CST",
       "last_error": "",
       "delivery_retry_count": 0,
       "submitted_prompt_snapshot": "episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
-      "submitted_prompt_sha256": "d85ef6e4fccbbc41c1df01df2b6e445fe57f6b75480dd9177de4dc377ee77497"
+      "submitted_prompt_sha256": "d85ef6e4fccbbc41c1df01df2b6e445fe57f6b75480dd9177de4dc377ee77497",
+      "delivered_at_cst": "2026-10-23 21:40:38 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/20_生成结果/ep01/verify/ep01_verify_v3_mouth_covered_768p.mp4",
+      "delivered_bytes": 775822
     }
   }
 }

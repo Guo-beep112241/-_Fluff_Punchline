@@ -1,0 +1,32 @@
+{
+  "tasks": {
+    "455595851350425": {
+      "episode": "ep01",
+      "shot": 1,
+      "model": "MiniMax-Hailuo-2.3",
+      "status": "succeeded",
+      "output": "20_生成结果/ep01/shots/sh01.mp4",
+      "submitted_at": "2026-10-24 03:06:05",
+      "motion": "A slow, slight camera drift along the notice board; two or three curled paper corners lift and settle in a draught. No animal, no person. Static subject, empty corridor.",
+      "bytes": 848649,
+      "downloaded_at": "2026-10-24 03:08:12"
+    },
+    "455595674022307": {
+      "episode": "ep01",
+      "shot": 2,
+      "model": "MiniMax-Hailuo-2.3",
+      "status": "succeeded",
+      "output": "20_生成结果/ep01/shots/sh02.mp4",
+      "submitted_at": "2026-10-24 03:06:08",
+      "motion": "The dog sits still looking up at the notice board, ears twitching once, tail tip sweeping the floor once, then holds. Static camera.",
+      "bytes": 813800,
+      "downloaded_at": "2026-10-24 03:07:52"
+    },
+    "failed_ep01_05": {
+      "episode": "ep01",
+      "shot": 5,
+      "status": "failed",
+      "error": "{\"code\": 429, \"message\": \"video generation limit reached: you already have videos generating or finished but not yet checked. Check the status of the tasks below with the video query tool before submitting a new one; a slot frees up once a task is confirmed finished, or after it times out. Do not resubmit the same request.\\n- task_id=455593431277978\\n- task_id=455595851350425\\n- task_id=4555956740"
+    }
+  }
+}

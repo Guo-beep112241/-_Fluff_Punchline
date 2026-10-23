@@ -1,0 +1,623 @@
+{
+  "ep": 8,
+  "title": "我妈问我学什么",
+  "logline": "寒假回家，妈妈问它学的相声出来能干嘛，它把一学期的行话倒了一桌子，最后只答出「能吃」；然后它把茶杯扫下了茶几，躺下接了个包袱，妈妈笑了。",
+  "shots": [
+    {
+      "id": 1,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。全景：地板占画面下三分之二，左边立着一条木质桌腿、后面还有一条沙发腿；它整只趴在地板上，身体朝右，头枕在前爪上，眼睛半睁看向画面右上方，耳朵小三角贴着头，尾巴平贴地板。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。傍晚的室内光偏暖，从右上方落地灯压下来，地板上有一小片暖色的反光。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg"
+      ],
+      "motion": "The dog lies still on the floor and only the tip of its tail taps the floor once. static camera, low angle right at floor level. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "寒假第三天。",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [
+        "tail_thump"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 2,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景：地板和桌腿在画面左侧，右边空出来；它从趴姿抬起头、两条前腿撑直，胸口离开地板，鼻子朝画面右上方，耳朵转向前方，尾巴尖轻轻动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。傍晚的暖光从右上方落地灯打过来，桌腿在身后投下一道短影。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog lifts its head and pushes its front legs straight, swinging its ears toward the table. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "hengjie",
+          "text": "你在学校学的这个，出来能干嘛呀？",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [
+        "chair_scrape"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 3,
+      "scene": "home",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。特写贴地：只拍它的头和脖子，鼻子几乎贴到镜头；它低着头，舌尖刚舔过上唇，眼睛往上瞟着画面右上方，耳朵往后贴了一半。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光斜着扫过它的鼻梁和右脸颊，毛的边上有一圈亮边。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog lowers its head and quickly licks its nose with one small flick of the tongue. static camera, tight floor-level close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "我妈问了个大的。",
+          "emotion": "neutral",
+          "speed": 1.0
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 4,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：桌腿在画面左边缘；它前腿撑直、后腿坐在地板上，胸口挺起来，下巴微抬，眼睛看向画面右上方，尾巴在地板上竖起了半截。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从侧后方打进来，蓬松的尾巴边缘透出一圈光。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg"
+      ],
+      "motion": "The dog pushes itself up into a sitting position, chest raised, tail lifting halfway off the floor. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "我得好好答。",
+          "emotion": "neutral",
+          "speed": 1.0
+        }
+      ],
+      "sfx": [
+        "tail_thump"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 5,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景平视：只拍它从胸口到头的部分，桌腿虚在左后方；它坐得笔直，下巴略收，嘴微微张开像要开口，耳朵朝前立着。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。傍晚的暖光从正面偏右打过来，脸是亮的，背景是暗的。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog sits very straight and lets its mouth fall slightly open, ears forward. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "相声讲究说学逗唱。",
+          "emotion": "neutral",
+          "speed": 1.05
+        },
+        {
+          "who": "hengjie",
+          "text": "……说学逗唱。",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 6,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景平视：地板在画面下方，桌腿在左边；它坐着把头略仰起来、下巴抬高，一只前爪离地抬到胸前又放回去，两只耳朵一前一后。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右上方落下来，地板上摊着一小片亮。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg"
+      ],
+      "motion": "The dog tilts its chin up and lifts one front paw a few centimetres off the floor, then sets it down. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "还有贯口。一口气八百字。",
+          "emotion": "neutral",
+          "speed": 1.05
+        },
+        {
+          "who": "hengjie",
+          "text": "嘴不干吗？",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 7,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。特写贴地侧向：镜头几乎贴在地板上，只拍它的脸和两条前腿；它把鼻子压到地板，嘴埋在两条前腿中间只剩下半边，眼睛往上抬。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从侧后方压过来，地板上有一层很低很薄的暗影。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog presses its nose down to the floor and mutters with its mouth buried between its front legs. static camera, floor-level close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "吃葡萄不吐葡萄皮。",
+          "emotion": "neutral",
+          "speed": 1.05
+        },
+        {
+          "who": "hengjie",
+          "text": "你嘴里含着什么？",
+          "emotion": "surprised",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 8,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景低机位：桌腿在右后方；它的头转向画面左侧的地板，眼睛斜看向左边，两只耳朵一高一低，嘴角垂着。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右上方打过来，左半边脸落进阴影里。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "The dog turns its head to the left and stares at the floor beside it, ears uneven. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "逗哏、捧哏。一个逗，一个捧。",
+          "emotion": "neutral",
+          "speed": 1.05
+        },
+        {
+          "who": "hengjie",
+          "text": "逗什么？",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 9,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。特写侧面：只拍它的头、脖子和左肩；它把头扭过去，把鼻尖埋进左肩靠近脖子的那撮毛里，眼睛眯起来，一只耳朵被压得翻过去。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右后方落在背毛上，毛尖有一点泛金。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg"
+      ],
+      "motion": "The dog twists its head and buries its nose in the fur on its left shoulder. static camera, side close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "逗哏是我。捧哏是我左边那撮毛。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 10,
+      "scene": "home",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：地板正中立着一只深色手机、屏幕背面朝着镜头（屏幕内容不可见），桌腿在右后方；它转过头看向手机，鼻子朝手机的右上角，耳朵朝前。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。手机背壳上映着一点暖光，房间其余部分偏暗。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog turns its head toward the phone standing on the floor. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "jiajia",
+          "text": "妈你别问了，他答不上来。",
+          "emotion": "neutral",
+          "speed": 1.1
+        },
+        {
+          "who": "jiajia",
+          "text": "我教你一句新的。",
+          "emotion": "happy",
+          "speed": 1.1
+        }
+      ],
+      "sfx": [
+        "phone_buzz"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 11,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。特写平视：地板上立着那只手机、屏幕朝它；它把鼻子凑到手机上，嘴唇被手机的上边缘遮住一半，眼睛盯着屏幕，耳朵朝前。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。屏幕的冷白光从下往上打在它的下巴和鼻尖上，背上还是房间的暖光。画面里只有这只狗、屏幕上亮着的手机和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog pushes its nose right up against the phone, its mouth hidden behind the phone's top edge. static camera, close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "jiajia",
+          "text": "记着，我姐是 rapper。",
+          "emotion": "happy",
+          "speed": 1.1
+        },
+        {
+          "who": "xiao",
+          "text": "我姐是 rapper。",
+          "emotion": "neutral",
+          "speed": 1.0
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 12,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景低机位：桌腿在左边，右侧是沙发腿的一道影子；它的头猛地转向画面右后方就停住，眼睛盯着那个方向，耳朵往后压了一点。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右后方来，它右半边脸偏暗。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog snaps its head toward the sofa behind it and freezes, ears pressing back. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "bingge",
+          "text": "学这个……有前途吗？",
+          "emotion": "neutral",
+          "speed": 0.9
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 13,
+      "scene": "home",
+      "dur": 5.8,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：地板占掉大半画面，桌腿在左边缘；它还坐着，可是背塌下去了、脖子往下垂，整条尾巴摊在地板上，眼睛看着地板。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光弱下去一档，地板上的亮片缩到画面一角。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg"
+      ],
+      "motion": "The dog stays seated but its back sinks down and its tail slides flat along the floor. static camera. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": [
+        "breath"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 14,
+      "scene": "home",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景3/4侧：身体朝右前方、脸转向镜头左前方四十五度，地板和桌腿在画面下方；它头微低，眼睛从地板上慢慢抬起来看向画面右上方，嘴闭着。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从左侧打过来，脸的一边亮、一边沉。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg"
+      ],
+      "motion": "The dog raises its eyes slowly from the floor toward the upper right. static camera, three-quarter close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "……能吃。",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 15,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：桌腿在画面左侧；它抬起头、胸口重新挺起来，下巴朝画面右上方，嘴张开，尾巴在地板上扫了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右上方落下来，胸口那片白毛是画面里最亮的地方。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog lifts its head and straightens its chest, mouth opening, tail sweeping once across the floor. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "hengjie",
+          "text": "那你学这个干啥？",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "xiao",
+          "text": "能吃上饭。",
+          "emotion": "neutral",
+          "speed": 1.0
+        }
+      ],
+      "sfx": [
+        "tail_thump"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 16,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：地板和桌腿在画面下三分之一；它从坐姿站起来，四条腿站定，身体朝右前方，尾巴摇起来，头转向画面右上方。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。傍晚的光已经偏橙，从右侧低角度扫过地板。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg"
+      ],
+      "motion": "The dog stands up on all four legs and wags its tail. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "hengjie",
+          "text": "那你别光说。",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "hengjie",
+          "text": "在家，逗我一下。",
+          "emotion": "neutral",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [
+        "paw_steps"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 17,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。侧面平视：镜头在它的左侧，只拍它从肩到头的部分；它把头歪向一侧，脸转向画面右上方的画外（妈妈的方向），嘴几乎转到看不见的那一侧，一只耳朵跟着翻起来，眼睛睁得很大。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从正面偏左来，眼睛里有一点反光。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog tilts its head far to one side, one ear flipping over, looking up off camera toward the right. static camera, side close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "我姐是 rapper。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 18,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景：画面右下角的茶几边上放着一只白瓷杯；它把舌头伸出来，同时抬起一只前爪悬在半空，头歪着，眼睛看向画面右上方。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右上方打过来，白瓷杯的杯口有一道高光。画面里只有这只狗、桌腿、地板和那只白瓷杯，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_front_01.jpg"
+      ],
+      "motion": "The dog sticks its tongue out and lifts one front paw into the air. static camera. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 19,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。背面3/4低机位：画面右下方是茶几的一条腿和桌沿，白瓷杯立在那儿；它背对镜头转过身，尾巴横扫过桌沿，杯子在画面边缘晃了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从前方逆着打过来，尾巴的边缘发亮。画面里只有这只狗、桌腿、地板和那只白瓷杯，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_back_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"
+      ],
+      "motion": "The dog turns away from the lens and its tail sweeps across the edge of the coffee table; the white cup wobbles and slips out of frame. static camera, behind three-quarter view. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": [
+        "mug_break"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 20,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：地板上有一小滩傍晚的光，桌腿在左侧；它站着不动，头低下去看着地板，尾巴垂着，耳朵向后。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。光比前面暗一档，房间里只剩地板那一块是亮的。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg"
+      ],
+      "motion": "The dog stands completely still with its head down and its tail hanging. static camera. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": [],
+      "amb": "silence",
+      "egg": false
+    },
+    {
+      "id": 21,
+      "scene": "home",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：地板占满画面，桌腿在左边缘；它整只侧翻倒在地板上，四脚朝天，后背贴着地板，头歪向画面右侧，舌头从嘴角掉出来。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。傍晚的光从右上方压下来，白色的肚子是画面里最亮的地方。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_onback_01.jpg"
+      ],
+      "motion": "The dog flops over onto its back, all four legs up in the air. static camera. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": [
+        "tail_thump"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 22,
+      "scene": "home",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景俯拍贴地：镜头从它头部侧上方压下去；它四脚朝天躺着，一只前爪搭在嘴边遮住半个嘴，头歪向镜头，眼睛看着镜头，尾巴在地板上拍了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从画面左侧打过来，肚子上有一片亮。画面里只有这只狗、桌腿和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_onback_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog lies on its back, head tipped toward the lens, and its tail taps the floor once. static camera, top-down close view. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "hengjie",
+          "text": "再来一个。",
+          "emotion": "happy",
+          "speed": 1.0
+        },
+        {
+          "who": "xiao",
+          "text": "这叫打滚儿。",
+          "emotion": "happy",
+          "speed": 1.0
+        }
+      ],
+      "sfx": [
+        "laughter"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 23,
+      "scene": "home",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。近景俯拍：它趴在地板上，下巴搁在两只前爪之间；一只成年女人的手从画面右上角伸进来，手掌平放在它头顶，手指插进毛里。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右上方落下，手背上有一层柔和的亮。画面里只有这只狗、一只人的手和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "A woman's hand comes into frame from the upper right and rests flat on top of the dog's head. static camera, top-down close view. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "hengjie",
+          "text": "挺好的。饿了就回来吃。",
+          "emotion": "neutral",
+          "speed": 0.9
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 24,
+      "scene": "home",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。特写3/4侧：身体朝右、脸转向镜头左前方四十五度；它趴着，头被那只手轻轻按着，眼睛半闭，嘴很小地张了一下，耳朵软下来。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。暖光从右上角斜下来，毛的边缘有一点柔光。画面里只有这只狗、一只人的手和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg"
+      ],
+      "motion": "The dog closes its eyes halfway and its mouth moves in a very small mumble under the hand. static camera, three-quarter close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "……能吃上饭。",
+          "emotion": "neutral",
+          "speed": 0.9
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 25,
+      "scene": "home",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。中景低机位：画面前景的地板上躺着一只手机，屏幕朝上、亮着一片白光（看不清内容）；它趴在后景，尾尖一下一下拍着地板，头转向手机。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。天色更暗了，房间里只剩手机屏幕的冷光和地板上一小点余光。画面里只有这只狗、屏幕上亮着的手机和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "The dog lies still while the tip of its tail taps the floor, and the phone screen in the foreground lights up. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "听说你会说人话？我也是。",
+          "emotion": "surprised",
+          "speed": 1.0
+        }
+      ],
+      "sfx": [
+        "notification"
+      ],
+      "amb": "home",
+      "egg": false
+    },
+    {
+      "id": 26,
+      "scene": "home",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的家里客厅里，低机位贴地，镜头压到地板高度。特写平视：手机在画面下缘、屏幕朝上亮着；它把脸凑近手机，眼睛睁圆盯着屏幕，耳朵朝前，鼻尖几乎碰到屏幕上沿。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致；脖子上松松系着一条暗红色毛线围巾。屏幕的冷白光从下往上打在它的毛和鼻尖上，背后的房间几乎全暗。画面里只有这只狗、屏幕上亮着的手机和地板，不要出现任何人的脸；画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_front_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog leans its face closer to the lit phone screen, eyes wide. static camera, close-up. realistic handheld phone footage, no text.",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "我校也有相声社。你来不来？",
+          "emotion": "surprised",
+          "speed": 1.0
+        },
+        {
+          "who": "xiao",
+          "text": "……头像是条柯基。",
+          "emotion": "surprised",
+          "speed": 0.95
+        }
+      ],
+      "sfx": [],
+      "amb": "home",
+      "egg": false
+    }
+  ],
+  "egg": {
+    "clip": "x6_adult_char_ref_walk_splay_03.mp4",
+    "caption": "AI 演绎 vs 真实本人 —— 它长大了"
+  }
+}

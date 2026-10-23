@@ -1,0 +1,362 @@
+{
+  "ep": 5,
+  "title": "排练室",
+  "logline": "全社只有它一个报名节目，它对着排练室的墙镜练亮相，把三秒练成一秒半，最后决定背对观众上台。",
+  "shots": [
+    {
+      "id": 1,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。全景，平视略低机位：旧地毯中央空着，它刚走进门，站在画面左下角，身体朝向画面右侧，脸略微转向镜头，耳朵松弛贴头、尾巴垂着；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。左边墙根摞着五把折叠椅，右边墙上有一面大镜子、镜面很暗看不清里面，天花板上挂着空调出风口，门上贴着一张空白的打印纸。阴天的光从右侧落地窗斜进来，地毯是冷灰色，顶灯偏白，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg"],
+      "motion": "The dog takes two slow steps in from the doorway and stops. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "演出前一周，排练室归我一个人用。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": ["door_open", "paw_steps"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 2,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。俯拍近景，机位在它斜上方：它趴在旧地毯上，身体朝向画面左前方，头低下去，鼻尖离地毯上那张打印纸的边缘不到一拳，耳朵向前放松，尾巴平放在身后；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。那张纸摊在地毯正中间，只有几行表格的版式、纸面是空白的。阴天窗光从右侧照进来，地毯纹理清楚，顶上的空调白光压一层冷调，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"],
+      "motion": "Its nose dips and sniffs the edge of the paper. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "社里十一个人。节目单上一个节目。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": ["paper_flutter"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 3,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视略低机位：它坐在地毯中央，两条前腿撑直、后腿收在身下，身体朝向画面右前方，脸转向画面左侧门口的方向，耳朵朝门口转，尾巴尖在地毯上轻轻扫；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。它左前方两米处的地上摊着那张空白打印纸，右后方是一面大镜子，镜面只有一片暗反光、看不清里面。阴天光从右侧落地窗进来，顶灯偏白，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg"],
+      "motion": "The dog sits still and turns its head slightly toward the door. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "shezhang", "text": "今年就你一个报名的。单口也行。", "emotion": "neutral", "speed": 1.0}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 4,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，3/4 侧机位，机位略低于它的头：它站在地毯上，身体朝画面右前方，脸转向镜头左前方四十五度，嘴自然微张像在说话，耳朵小三角贴头、尖端微微前折，尾巴竖到一半；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。它身后的地毯上摊着那张空白打印纸。阴天窗光从右侧打在它脸侧，左脸留一点暗部，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"],
+      "motion": "The dog tilts its head to one side and holds it there. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "单口不是一个人说。", "emotion": "neutral", "speed": 1.05},
+        {"who": "xiao", "text": "是一个人分演两角。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 5,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视机位：它侧身站着，身体朝画面右侧、脸朝画面右侧那扇半开的门，只露出侧后方的轮廓，耳朵朝门口转，尾巴原本垂着、尾尖刚刚抬起来一点；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。右边墙根摞着折叠椅，地毯中央摊着那张空白打印纸。走廊的白光从门缝切进来，在地上拉出一道亮条，室内偏暗，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg"],
+      "motion": "The tip of its tail lifts a few centimeters and stops. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "shezhang", "text": "那你练亮相。亮相是命。", "emotion": "neutral", "speed": 1.0}
+      ],
+      "sfx": ["door_open"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 6,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视略低机位：它四脚站在旧地毯正中，身体朝画面右前方，脸转向正前方略微偏左，胸部微微鼓起像在深吸一口气，耳朵贴头，尾巴正从垂着往上升；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。它脚边一步远的地上摊着那张空白打印纸，右侧墙上的大镜子只映出一片模糊的白影。阴天窗光与顶部空调白光混在一起，地毯冷灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg"],
+      "motion": "Its tail rises slowly from the ground toward full height. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "亮相，是把气势做出来。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": ["breath"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 7,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。特写，低机位仰拍，机位在它身后偏右：只拍它的背和尾巴，尾巴竖直举到最高点、尾毛完全散开、定住不动，背上的白毛顺着头尾方向躺着，头和耳朵的轮廓压在画面上缘；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。背景是排练室的深色旧地毯和一面虚掉的墙镜。顶上的空调白光从上方照下来，尾毛边缘有一圈很淡的轮廓光，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_back_01.jpg"],
+      "motion": "The raised tail trembles once at the tip, then settles and holds still. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "我的亮相，是把尾巴竖起来，定住三秒。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 8,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，平视略低机位：它站在地毯上，身体朝画面左前方，头已经不受控地扭向身后的尾巴，鼻尖快要碰到尾根，两只耳朵一高一低，尾巴软下来往一侧倒；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。它脚边是旧地毯和那张空白打印纸，右侧墙上的镜子晃着一片白光。阴天窗光偏冷，地毯上有一道斜的亮边，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"],
+      "motion": "The dog turns its head back toward its own tail and sniffs it while the tail drops. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "……一秒半。", "emotion": "neutral", "speed": 1.05},
+        {"who": "xiao", "text": "狗的上限就是一秒半。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 9,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，平视机位：它仰起头，鼻子皱起来、嘴张开，身体被喷嚏带得往后一挫，耳朵往后贴，尾巴僵在半空，正对着天花板上那个空调出风口；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。它脚下是旧地毯，旁边一把折叠椅，右侧墙上的镜子只反着一片冷白。出风口的冷风把顶上的光吹成一层很薄的雾，地毯冷灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_face_front_sharp_01.jpg"],
+      "motion": "The dog sneezes once and its whole body jerks backward. static camera. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": ["sneeze"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 10,
+      "scene": "rehearsal",
+      "dur": 4.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，3/4 侧机位：它站直了一点，身体朝画面右前方，脸转向右侧墙上的镜子，下巴微抬、嘴角像在笑，耳朵放松，尾巴重新竖到半高、尾尖在小幅晃；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。地毯上摊着那张空白打印纸，画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。顶部空调白光照着它的侧脸，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"],
+      "motion": "The dog shakes its head once and lifts its chin. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "我给你加个响的。", "emotion": "happy", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 11,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。俯拍近景，机位在它斜上方：它趴下来，前爪搭在地毯上，头低到贴近地面，一只耳朵朝地上那部手机的方向偏过去，另一只耳朵松着，尾巴平铺在身后；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机平放在地毯上、屏幕朝上且屏幕是黑的，旁边是那张空白打印纸。顶部空调白光在地毯上压出一块干净的光斑，四周偏暗，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"],
+      "motion": "The dog lowers its head toward the phone on the floor and holds still to listen. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "jiajia", "text": "我陪你过一遍，从头来。", "emotion": "neutral", "speed": 1.1}
+      ],
+      "sfx": ["phone_buzz"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 12,
+      "scene": "rehearsal",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视略低机位：它重新站到地毯中央，身体侧对画面、略背向镜头，脸朝画面前方，胸脯挺起来像在起范儿，耳朵往前，尾巴在身后摇成一个弧；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。脚边的地毯上摊着那张空白打印纸和一部黑屏手机。阴天窗光从右侧进来，地毯冷灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"],
+      "motion": "The dog straightens up and its tail starts wagging fast. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "jiajia", "text": "重来。", "emotion": "neutral", "speed": 1.1},
+        {"who": "xiao", "text": "来了来了，再来一遍！", "emotion": "happy", "speed": 1.05}
+      ],
+      "sfx": ["click"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 13,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，低机位：它四脚站定、胸脯挺得更高，头微微扬起，眼睛睁圆，耳朵朝前，尾巴在身后摇得只剩一道白影；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。地毯上那张空白打印纸被它踩住一个角，右侧墙上的镜子映着一片虚白。顶部空调白光加右侧窗光，地毯上有一层薄薄的灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg"],
+      "motion": "Its tail wags faster and faster while the front paws stay planted. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "重来和再来，在我这儿是一个词。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 14,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，平视机位：它站在地毯上，身体朝画面右前方，头猛地转向右侧的门，两只耳朵全朝门的方向转，眼睛睁圆、嘴闭着，尾巴开始往上抬；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面右侧的门开着一条缝，门缝底部的地毯上有一小团白色的毛。走廊的白光从门缝里挤进来，在它侧脸切一道窄亮边，室内偏暗，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"],
+      "motion": "The dog snaps its head toward the door and its ears turn forward. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "我第一个观众，趴在门外面。", "emotion": "surprised", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 15,
+      "scene": "rehearsal",
+      "dur": 4.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，低机位，机位贴近地面、在门的这一侧：它低着头把鼻子凑到门缝边上，画面里只露出鼻子、嘴和前爪，耳朵朝前，屁股和尾巴还在画面外的后方；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。门缝外面那一小团白色的毛正在往后退，已经只剩半个轮廓，门缝底部的地毯上有一道压痕。走廊白光从门缝打进来，把它的鼻尖照亮，室内一侧很暗，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"],
+      "motion": "The white tuft outside the door withdraws and disappears from the gap. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "……跑了。", "emotion": "sad", "speed": 1.05}
+      ],
+      "sfx": ["paw_steps"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 16,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视略低机位：它走到墙镜前站定，身体侧朝画面右前方、脸正对镜子，耳朵贴头，尾巴垂着，四条腿站得比平时正；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。室内没有开顶灯，只有右侧落地窗的阴天光和门缝透进来的一条白光，地毯冷灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg"],
+      "motion": "The dog walks up to the mirror and stops, facing it. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "排练室里唯一会看着我的，是镜子。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 17,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，3/4 侧机位：它站在镜前，身体朝画面右前方，脸对着镜子，嘴角松下来，耳朵放松，尾巴在身后慢慢地左右摇；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。阴天窗光从左前方照过来，镜面上有一层很淡的白雾，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"],
+      "motion": "The dog wags its tail slowly and steadily. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "镜子里那个，也在摇。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 18,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视机位：它站在镜前不动，身体朝画面右前方，脸对着镜子，耳朵一动不动，尾巴竖直立在身后、定在最高点；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。阴天窗光偏冷，地毯上没有多余的东西，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"],
+      "motion": "The wagging stops and the tail stands perfectly still. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "它也定住了。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 19,
+      "scene": "rehearsal",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，平视略低机位：它站在镜前，身体朝画面右前方，头低下去扭向身后，鼻尖贴到自己的尾根上，眼睛半闭，耳朵一前一后，本来竖直的尾巴被它自己闻得往一侧偏；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。室内只有右侧落地窗的阴天光，很安静，地毯冷灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"],
+      "motion": "The dog lowers its head and sniffs its own tail. static camera. realistic handheld phone footage, no text.",
+      "lines": [],
+      "sfx": [],
+      "amb": "silence",
+      "egg": false
+    },
+    {
+      "id": 20,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，3/4 侧机位：它把头抬起来转向镜子，身体朝画面右前方，眼睛睁得很大、嘴自然微张像在打招呼，耳朵朝前立着，尾巴开始摇；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。阴天窗光从左侧打在它脸上，镜面反着一层薄光，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"],
+      "motion": "The dog lifts its head and steps half a pace toward the mirror. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "哎，你也来啦？", "emotion": "happy", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 21,
+      "scene": "rehearsal",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。特写，平视机位，机位在它侧后方：它的鼻尖正抵在镜面上，鼻头把镜面压出一小圈白雾，头微微向后撤，耳朵慢慢往两边放，尾巴垂下来；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。画面右侧是一面排练室墙镜，镜中只有模糊的白色反光和轮廓，不要清晰地出现第二只狗。室内只有阴天窗光，镜面上那圈白雾被光照得很清楚，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_face_front_sharp_01.jpg"],
+      "motion": "The dog touches its nose to the glass and then pulls back. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "……我还以为来了个观众。", "emotion": "sad", "speed": 1.05}
+      ],
+      "sfx": ["breath"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 22,
+      "scene": "rehearsal",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。中景，平视略低机位：它坐在旧地毯中央，两条前腿撑直、后腿收在身下，身体朝画面右前方，头歪向一边像在想事，两只耳朵一高一低，尾巴平放在身后；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。它脚边是那张空白打印纸，右侧墙上的大镜子只剩一片虚白。阴天窗光从右侧进来，地毯冷灰，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg"],
+      "motion": "The dog tips its head to one side and holds it, thinking. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "行。亮相我改成背对观众。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 23,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，低机位，机位就在它正后方一米：它背对镜头站定，四条腿略微外撇，头朝前被自己的尾巴完全挡住，画面里只剩一条蓬松的白色大尾巴，尾巴竖到最高、把它的身体和背景几乎全挡住；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。地毯边缘和一把折叠椅的腿在画面两侧各露出一点点。顶部空调的白光从上面打下来，尾毛边缘发亮、中间有一层浅灰的阴影，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_back_01.jpg"],
+      "motion": "The dog turns its back to the camera and the big white tail fills the frame. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "一转身，尾巴把身体全挡住。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 24,
+      "scene": "rehearsal",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的社团排练室里。近景，低机位，机位在它正后方一米：它把后腿往下坐，屁股正好压进自己那条蓬松的大尾巴里，尾巴被压得摊在地毯上像一块白垫子，背和耳朵从尾巴上方露出来；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。地毯上那张空白打印纸在画面左下角露出一个边。顶部空调白光偏冷，摊开的尾毛上有一层灰影，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_back_01.jpg"],
+      "motion": "The dog lowers its hindquarters and sits down onto its own tail. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "还省了把椅子。", "emotion": "happy", "speed": 1.05}
+      ],
+      "sfx": ["tail_thump"],
+      "amb": "rehearsal",
+      "egg": false
+    },
+    {
+      "id": 25,
+      "scene": "theatre",
+      "dur": 5.8,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的小剧场舞台侧幕后面。中景，平视略低机位：它侧身站在侧幕的阴影里，身体朝画面右侧、脸朝幕布缝外，耳朵朝前，尾巴垂着不动，胸背随着呼吸轻轻起伏；保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致，四只脚掌略微朝外撇。画面左侧是一整幅黑色侧幕，幕布中间有一道竖直的光缝，缝外是虚掉的深色观众席和一排排椅背。幕布缝里的舞台光打在它侧脸和胸前，形成一道亮的轮廓，室内其余部分很暗，画面写实、手机拍摄、略有噪点。画面里不要出现任何文字、标识或水印。",
+      "refs": ["10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg"],
+      "motion": "The dog's chest rises and falls with slow breathing. static camera. realistic handheld phone footage, no text.",
+      "lines": [
+        {"who": "xiao", "text": "后台只剩我一个。", "emotion": "neutral", "speed": 1.05},
+        {"who": "xiao", "text": "侧幕外面，一百二十个座位，满了。", "emotion": "neutral", "speed": 1.05}
+      ],
+      "sfx": [],
+      "amb": "theatre",
+      "caption": "演出当天 · 后台",
+      "egg": false
+    }
+  ],
+  "egg": {
+    "clip": "x6_puppy_sit_04.mp4",
+    "caption": "AI 演绎版 vs 真实本人 —— 它真的坐着「说」了一整段"
+  }
+}

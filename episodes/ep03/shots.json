@@ -1,0 +1,667 @@
+{
+  "ep": 3,
+  "title": "十二门",
+  "logline": "它算好了十二门课，可它只有一块爪垫，按不住一个按钮——按住不放就是连续点击，一晚上抢了十二门，被系统判成超出选课上限；它越慌越按，反而把最想上的《相声艺术概论》按进了课表。然后教务系统通知：期末，三千字。",
+  "shots": [
+    {
+      "id": 1,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，贴地低机位中景，镜头几乎贴在木地板上，手机背面朝上摊在它前爪前方半掌远的位置。它趴着，下巴离地三指高，用鼻尖去拱手机的上边缘，两只前爪并拢收在胸口，眼睛向下盯着手机；耳朵小三角贴着脑袋、尖端微微外翻，尾巴平放在身后的地板上一动不动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。傍晚的斜光从窗口落在它左肩和手机上，宿舍其余部分是偏暗的暖灰调。手机屏幕朝下，屏幕内容不可辨，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "The dog nudges the phone with its nose and pushes it a few centimetres closer. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "选课系统，今晚八点开。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 2,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，俯拍特写，镜头从正上方压下来，一张对折过的打印纸摊在木地板正中、右上角有一道折痕。它趴着，头低下来，右前爪的爪垫虚按在纸的左上角，爪尖把纸压出一道浅褶，鼻头几乎碰到纸面；眼睛盯着纸的中央，耳朵贴在脑袋两侧，尾巴只在画面右下角露出一点尖。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。地板上的窗光偏冷，纸面是哑光白，纸边落着一层薄薄的绒毛阴影。纸面完全空白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg"
+      ],
+      "motion": "The dog presses one paw down on the corner of the paper and drags it slightly across the floor. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "我算好了。十二门，一节不撞。",
+          "emotion": "happy",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "paper_flutter"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 3,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，贴地低机位中景，镜头在它正前方偏右、离地板一掌高。它半趴着，前半个身子趴在地上、后腿收在身下，头抬起来转向镜头左侧，嘴微张，眼睛睁圆，耳朵往前抬了一点，尾巴在地板上轻轻扫了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。门缝方向漏进来的一道冷白走廊光打在它左脸上，宿舍其余部分是偏暗的暖灰调。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog lifts its head and turns it toward the left, ears flicking forward. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "roommate",
+          "text": "你抢课了吗？",
+          "emotion": "neutral",
+          "speed": 1.1
+        },
+        {
+          "who": "xiao",
+          "text": "抢。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 4,
+      "scene": "corridor",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的教学楼走廊场景里，低机位全景，镜头几乎贴着水磨石地面，走廊尽头的门框在画面深处发亮。它侧身朝右前方走，嘴里横叼着一张对折的打印纸，纸的两端垂在嘴角两侧，尾巴竖起二十度；眼睛看前方，耳朵向后压平，步态放松，前后爪落地时略微外撇。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。荧光灯从斜上方打下来，冷白偏青，地面有一层浅浅的反光。纸面朝外但完全空白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg"
+      ],
+      "motion": "The dog walks forward along the corridor with the folded paper held in its mouth, tail up. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "第一节课，中兽医学。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "paw_steps"
+      ],
+      "amb": "corridor",
+      "egg": false
+    },
+    {
+      "id": 5,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，贴地低机位全景，镜头放在过道地面上，两侧是一排排向上抬升的空座椅，讲台在画面右上方只露出边缘。它趴在过道正中央，四肢收在身体下面，头朝讲台方向，下巴贴地，眼睛半睁着往上看；耳朵竖着，尾巴顺着过道平铺在身后，胸背随呼吸缓慢起伏。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。讲台方向漏过来一片偏暖的投影光，过道地面是灰白水磨石，暗部偏冷。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "The dog's chest rises and falls slowly as it lies flat on the aisle floor, one ear twitching. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "teacher",
+          "text": "今天讲四诊：望、闻、问、切。",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "xiao",
+          "text": "过道上，听得更清楚。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 6,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景，3/4 侧低机位，镜头在它左前方、略低于它的眼睛。它趴着，把上半身撑起来，脖子伸长，头抬向画面右上方的讲台，眼睛睁得很圆、眼神发亮；耳朵向前立起又微微外撇，下巴收紧，尾巴尖在身后轻轻抖了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。讲台方向的投影光落在它的额头和鼻梁上，脸颊侧面压在暗处。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg"
+      ],
+      "motion": "The dog stretches its neck and lifts its head toward the podium, ears lifting. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "望闻问切。相声也有。",
+          "emotion": "happy",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 7,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景贴地，镜头在它身侧、几乎与地板齐平。它趴着，把头低下去，鼻尖凑到自己右前爪的爪垫上方，鼻翼轻轻抽动地在嗅；眼睛往下看，耳朵软下来垂向两边，尾巴压在地面不动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。过道地面的冷灰反光从下方打上来，它下巴和胸口的毛被照亮，背上是暗的。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog lowers its nose to its own front paw and sniffs it in short puffs. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "teacher",
+          "text": "望，是用眼睛看。",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "xiao",
+          "text": "我们闻，是用耳朵。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "breath"
+      ],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 8,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景，镜头在过道里略高的位置往下俯。它趴在地上，猛地抬起头，脖子一僵，头转向画面左侧的讲台，眼睛睁大，鼻孔张开，耳朵一下子立起来、尖端绷直，前爪在地面上抓紧了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。讲台方向的光打在它正脸上，过道其余部分压在阴影里。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_front_01.jpg"
+      ],
+      "motion": "The dog's head snaps up and freezes, ears standing up. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "teacher",
+          "text": "那位同学。",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "xiao",
+          "text": "……到。",
+          "emotion": "surprised",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 9,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，中景低机位，镜头在它正前方偏左三十度。它从趴姿坐起来，坐得很直，两条前腿并拢撑在地面上，胸挺起来，头微微低着看镜头左下方，嘴闭着，眼睛眨了一下；耳朵还带着点往后贴的意思，尾巴盘在身侧。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。过道顶灯从上方落下，地面在它身下留出一圈浅浅的影子。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_front_01.jpg"
+      ],
+      "motion": "The dog pushes itself up from lying into a sitting position and holds perfectly still. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "teacher",
+          "text": "上课不要趴在地上。",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "xiao",
+          "text": "我坐好了。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 10,
+      "scene": "lecture",
+      "dur": 4.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景俯拍，镜头从过道上方斜压下来，画面左边缘伸进一只虚化的手，只露出三根指尖，指尖捏着一颗带透明糖纸的水果糖，递到它鼻子前方。它坐着，脖子往前伸，嘴张开去叼那颗糖，眼睛盯着糖；耳朵向前，尾巴开始在地上扫。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。教室顶灯是冷白荧光，糖纸边缘有一小圈高光。那只手不入焦、不出现人脸，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog stretches its neck forward and takes the candy from the blurred fingertips. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "classmate",
+          "text": "吃吗？",
+          "emotion": "happy",
+          "speed": 1.1
+        },
+        {
+          "who": "xiao",
+          "text": "吃。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 11,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景，镜头在它正前方偏右的过道地面上。它坐着，一动不动，一边腮帮子鼓起来，嘴里还含着东西，嘴角微微咧着；眼睛往上瞟向讲台方向，耳朵慢慢往后压平，尾巴僵在地面不摇。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。顶灯从上方压下来，脸上的高光偏冷。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog freezes with one cheek bulging, eyes sliding up toward the podium. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "teacher",
+          "text": "那位同学不要吃东西。",
+          "emotion": "neutral",
+          "speed": 0.95
+        },
+        {
+          "who": "xiao",
+          "text": "我含着。",
+          "emotion": "sad",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 12,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，中景贴地低机位，镜头在过道里，人已经走空的座椅在背景里层层退远。它趴着，把头埋进摊在过道地板上的一沓打印讲义里，鼻子插进纸页之间；眼睛闭着，耳朵放松地垂下来，尾巴在身后慢慢摆了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。下课后的窗户光从侧面斜进来，光里浮着一层尘。讲义纸面完全空白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_01.jpg"
+      ],
+      "motion": "The dog pushes its nose into the stack of printed handouts and sniffs. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "这课我爱上。",
+          "emotion": "happy",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "paper_flutter"
+      ],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 13,
+      "scene": "campus",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的校园林荫路场景里，低机位全景，镜头在它左前方、离地半米。它朝镜头方向小跑，嘴里叼着的对折打印纸被风顶起一角，四条腿的步幅放得很大，前后爪落地时略微外撇；眼睛看前方，耳朵被风往后带，尾巴高高翘起。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。傍晚的斜阳从树缝里穿过来，路面被照成暖橘色，长影子拖在它身后。纸面完全空白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_full_02.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_stand_side_01.jpg"
+      ],
+      "motion": "The dog trots toward the camera with the folded paper in its mouth, ears blown back. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "八点前，得回去。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "paw_steps"
+      ],
+      "amb": "campus",
+      "egg": false
+    },
+    {
+      "id": 14,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，贴地低机位中景，镜头在它右前方、与地板齐平。手机平放在地板上，屏幕朝上但内容完全不可辨，只有一片白亮反光；它趴着，头低下来悬在手机上方，鼻子离手机两指远，眼睛盯着手机；耳朵向前竖起，尾巴停了。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。宿舍没开大灯，只有手机的光从下方打在它下巴和胸口，其余部分压在暗蓝的夜色里。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "The dog lowers its head until its nose is a finger-width above the phone, and holds. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "八点了。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "phone_buzz"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 15,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，俯拍近景，镜头从正上方压下来，手机平放在画面前景，屏幕朝上但内容不可辨，只有一片白色反光和它模糊的脸的倒影。它的右前爪伸进画面，整块爪垫按在手机屏幕下缘，五根爪尖张开，指甲抵着屏幕；头低在画面右上角，眼睛越过手机往上看，耳朵贴在脑袋两侧，尾巴尖在画面之外。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的光从下往上照，胡须和下颌边缘被勾出一圈亮线，地板其余部分是暖灰暗调。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg"
+      ],
+      "motion": "The dog plants its right paw flat on the lower edge of the phone screen. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "人有指头。我有一个垫。",
+          "emotion": "neutral",
+          "speed": 1.05
+        },
+        {
+          "who": "xiao",
+          "text": "一按就是一片。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "click"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 16,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，正俯拍特写，镜头垂直向下，手机占画面下半部，屏幕朝上、内容完全不可辨，只有一片白色反光。它的右前爪悬在屏幕上方两指高，爪垫张开、爪尖绷紧，正向屏幕戳下去；头低在画面左上角，一只眼睛从手机边缘露出来盯着屏幕；耳朵向后压，尾巴绷直。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的白光从下方照上来，反光里能看见它鼻尖和一只眼睛的模糊倒影。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg"
+      ],
+      "motion": "The dog's paw hovers over the screen and stabs down at it again and again in short quick taps. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "按一下。就按一下。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "click"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 17,
+      "scene": "dorm",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，近景 3/4 侧，镜头在它左前方、略高于它。手机在画面下方的地板上，它把右前爪从屏幕上收回来，头抬起来，愣愣地看向画面右前方；眼睛睁大，嘴角松下来，耳朵一点点往后压平，尾巴停住不动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的光还在地板上亮着一小片，它的脸有一半在暗里。手机屏幕朝上，屏幕内容不可辨，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog pulls its paw back off the screen and lifts its head, stunned. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "……超出上限？",
+          "emotion": "surprised",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "notification"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 18,
+      "scene": "dorm",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，贴地低机位中景，镜头在它正前方的地板上，手机在画面左下角只露出一条边。它趴着一动不动，头僵在半抬的位置，眼睛直直地看着画面外的某个点；耳朵完全平贴在脑袋上，鼻头微微发亮，尾巴贴着地板一动不动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。宿舍里只有窗外一点街灯的橙光，室内暗部很重，手机那一小块光也压得很低。手机屏幕朝下，屏幕内容不可辨，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_front_01.jpg"
+      ],
+      "motion": "The dog holds completely still, ears flattening slowly against its head. static camera. realistic handheld phone footage, no text",
+      "lines": [],
+      "sfx": [],
+      "amb": "silence",
+      "egg": false
+    },
+    {
+      "id": 19,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，俯拍近景，镜头从斜上方压下来，手机平放在地板正中，屏幕朝上、内容不可辨，只有一片白色反光。它的两只前爪一起按在屏幕上，爪垫压得摊开，身体前倾、重心整个压下去；头低在屏幕正上方，眼睛盯着屏幕，嘴微微张开在喘；耳朵向后飞起，尾巴在身后甩了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的白光把它的前爪照得发亮，地板四周暗下去。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg"
+      ],
+      "motion": "Both front paws slam down on the phone and press, the dog leaning its whole weight forward. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "取消。取消。取消。",
+          "emotion": "fearful",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "click"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 20,
+      "scene": "dorm",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，近景 3/4 侧，镜头在它右前方、与它眼睛同高。它趴着，把头抬起来，脸转向镜头左前方，鼻尖朝着画面外偏左；眼睛睁得很圆，瞳仁里有一小点手机的反光，嘴微张，耳朵一点点立起来，尾巴尖在身后抖了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的光从下方把它的下颌照亮，脸的侧面留一道暗边。手机屏幕朝上，屏幕内容不可辨，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg"
+      ],
+      "motion": "The dog lifts its head and turns its face toward the left, mouth falling slightly open. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "……《相声艺术概论》？",
+          "emotion": "surprised",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 21,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，贴地低机位中景，镜头侧对着它、几乎贴地。它整个趴下来，下巴搁在地板上，手机就在它鼻尖正前方半掌远的地方、屏幕朝上亮着；眼睛半睁着看手机，耳朵松下来贴在脑袋两侧，尾巴平铺在地板上、末端轻轻拍了一下。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的光是画面里唯一的光源，把它的口鼻和手机之间照出一小块亮区。手机屏幕朝上，屏幕内容不可辨，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg"
+      ],
+      "motion": "The dog lowers its chin all the way to the floor and lets out a long breath. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "roommate",
+          "text": "你抢着几门了？",
+          "emotion": "neutral",
+          "speed": 1.1
+        },
+        {
+          "who": "xiao",
+          "text": "十二门。全抢上了。",
+          "emotion": "happy",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "breath"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 22,
+      "scene": "dorm",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的宿舍木地板场景里，俯拍近景，镜头从它右上方斜压下来，卷了边的打印课表摊在地板上，一角被它咬在嘴里。它趴着，头歪向左边，腮帮子一动一动地在嚼那张纸，眼睛半闭，嘴角咧开；耳朵放松地向后，尾巴在画面外敲了一下地板。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。午后的窗光斜进来，纸面是哑光白，木地板上一道亮边。纸面完全空白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_01.jpg"
+      ],
+      "motion": "The dog chews the corner of the printed sheet in small bites, head tilted. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "这学期，稳了。",
+          "emotion": "happy",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "paper_flutter"
+      ],
+      "amb": "dorm",
+      "egg": false
+    },
+    {
+      "id": 23,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，低机位全景，镜头贴着过道地面，画面右上方是讲台的一角和一块空白投影幕布的下沿，座椅在背景里一排排往上退。它趴在过道最靠讲台的第一块地砖上，正对讲台方向，头抬起来看幕布；眼睛专注，耳朵向前，前爪并拢伸出，尾巴顺着过道铺开。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。讲台方向的投影光把它的脸照得很亮，身后座椅落在暗里。幕布和地面完全空白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_half_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_threequarter_01.jpg"
+      ],
+      "motion": "The dog lies at the front of the aisle and lifts its head to look up at the blank projection screen. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "期末。我占了第一排。",
+          "emotion": "happy",
+          "speed": 1.05
+        },
+        {
+          "who": "xiao",
+          "text": "看得清。",
+          "emotion": "happy",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "chair_scrape"
+      ],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 24,
+      "scene": "lecture",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景俯拍，镜头从它上方斜下来，手机平放在它两前爪之间的地板上，屏幕朝上但内容不可辨，只有一片亮白和它鼻尖的倒影。它低头看屏幕，鼻子几乎贴上去；眼睛睁着不动，耳朵慢慢往两边塌，尾巴在身后停了。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。手机的光从下方照亮它的下颌，讲台方向的光在它背上留一条边。画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_head_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_face_threequarter_01.jpg"
+      ],
+      "motion": "The dog lowers its head to the phone screen and stops moving. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "……三千字？",
+          "emotion": "surprised",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "notification",
+        "phone_buzz"
+      ],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 25,
+      "scene": "lecture",
+      "dur": 5.0,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，近景低机位，镜头贴地、略偏向它的右前方。它趴着，头低下去看着自己的右前爪，那只爪子摊在地砖上，五根爪尖张开又慢慢收拢，爪垫边缘沾了一点灰；眼睛垂着，耳朵软在脑袋两侧，尾巴垂在地砖上不动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。过道的冷白顶灯从侧上方打下来，爪背的毛被照出一层薄薄的高光，指甲是半透明的。手机在前景虚化成一块白，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_face_01.jpg"
+      ],
+      "motion": "The dog's front paw opens and slowly closes on the tile while it stares down at it. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "我能背八千字贯口。",
+          "emotion": "neutral",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [],
+      "amb": "lecture",
+      "egg": false
+    },
+    {
+      "id": 26,
+      "scene": "lecture",
+      "dur": 5.5,
+      "frame_prompt": "把第二张图里这只萨摩耶放到第一张图的阶梯教室过道地板场景里，贴地低机位中景，镜头在它正前方略偏左，手机在画面右下角的地板上亮着一小块。它趴着，把鼻子整个埋进两条前腿之间，只露出额头和两只贴在脑后的耳朵，眼睛闭着，尾巴垂在地砖上不动。保持这只狗的脸型圆、眼睛大而圆、耳朵小三角贴头、口鼻短宽、毛色纯白不是米黄、体型偏瘦腿长，与第二张图完全一致。讲台方向的光已经暗下来，只有手机那一点白光照在它的头顶和爪背上。手机屏幕朝上，屏幕内容不可辨，画面里不要出现任何文字、标识或水印。",
+      "refs": [
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_chin_down_01.jpg",
+        "10_工作素材/characters/_curated/adult/x6_adult_lying_full_02.jpg"
+      ],
+      "motion": "The dog buries its nose between its front legs and settles. static camera. realistic handheld phone footage, no text",
+      "lines": [
+        {
+          "who": "xiao",
+          "text": "……我点不准一个按钮。",
+          "emotion": "sad",
+          "speed": 1.05
+        }
+      ],
+      "sfx": [
+        "breath"
+      ],
+      "amb": "lecture",
+      "egg": false
+    }
+  ],
+  "egg": {
+    "clip": "x6_puppy_lying_toy_03.mp4",
+    "caption": "AI 演绎版 vs 真实本人 —— 它真的这么啃"
+  }
+}

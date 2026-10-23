@@ -37,8 +37,7 @@
 !20_生成结果/ep01/verify/
 !20_生成结果/ep01/reference/
 
-# 4) 成片归档与废弃件（暂不入库，等第 1 集真正上线再开）
-30_成片/
+# 4) 成片归档（第一季 8 集成片入库；废片不入库）
 90_废弃/
 
 # 5) 扩展名默认排除
@@ -56,6 +55,8 @@
 # 6) 放行上面已纳入版本控制的目录里的媒体文件
 #    （必须排在扩展名规则之后 —— gitignore 是「最后一条匹配生效」）
 !10_工作素材/characters/_curated/**
+# 抠图产物（rembg 生成，可重建，不入库）
+10_工作素材/characters/_curated/adult_cut/
 !10_工作素材/characters/_placeholder/**
 !10_工作素材/habits/_curated/**
 !10_工作素材/habits/_placeholder/**
@@ -63,6 +64,10 @@
 !20_生成结果/ep01/shots/**
 !20_生成结果/ep01/verify/**
 !20_生成结果/ep01/reference/**
+!30_成片/
+!30_成片/*.mp4
+!30_成片/posters/
+!30_成片/posters/*
 
 # macOS
 .DS_Store

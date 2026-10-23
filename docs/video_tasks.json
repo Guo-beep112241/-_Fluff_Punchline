@@ -29,6 +29,28 @@
       "delivered_file": "10_工作素材/habits/_placeholder/x6_placeholder_adult_behavior_01.mp4",
       "delivered_bytes": 2939080,
       "recovery_note": "2026-10-23 05:13 平台资产交付环节已恢复，同一 task_id 成功取回。视频 1440x2560 (2K/9:16)、6.58s、24fps、含 H3 原生 AAC 音轨。全程未重新提交任务，未额外消耗生成额度。"
+    },
+    "455456579522981": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 6,
+      "ratio": "9:16",
+      "resolution": "2K",
+      "output_file": "10_工作素材/habits/_curated/x6_adult_char_ref_stand_turn_01.mp4",
+      "purpose": "成年期定妆参考视频 v1 — 真实照片版（修正毛量/脸型/胸毛/气质）",
+      "submitted_at_ms": 1792748409138,
+      "submitted_at_cst": "2026-10-23 17:40:09 CST",
+      "last_query_at_ms": 1792748409138,
+      "terminal_status": "submitted",
+      "reference_images": [
+        "x6_adult_stand_front_01",
+        "x6_adult_face_front_sharp_01",
+        "x6_adult_stand_threequarter_01",
+        "x6_adult_stand_side_01",
+        "x6_adult_face_threequarter_01"
+      ],
+      "prompt_file": "prompts/verified/x6_adult_char_ref_v1.txt",
+      "notes": "针对用户反馈修正：dense double-coat → medium-length flat coat；broad wedge-shaped head → rounded soft head；almond-shaped eyes → large round eyes；补 chest fur unclumped；去 majestic/proud/dignified"
     }
   }
 }

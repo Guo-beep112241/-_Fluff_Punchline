@@ -1,0 +1,19 @@
+subject_definitions:
+<Subject 1>: is the young white samoyed dog in <Picture 1>, <Picture 2>, <Picture 3>, <Picture 4> and <Picture 5> - the same individual dog in every picture. From <Picture 1>, fully preserved. From <Picture 2>, fully preserved. From <Picture 3>, fully preserved. From <Picture 4>, fully preserved. From <Picture 5>, fully preserved.
+<Subject 1> has a rounded soft puppy-like head with a broad round forehead, large round dark brown eyes set wide apart, a short broad muzzle, a large round black nose, small triangular ears held slightly outward, and a medium-length soft creamy-white coat that lies flat and even. Its chest fur is light, smooth and evenly distributed, with no heavy ruff, no mane and no clumping. Its build is slim and youthful, with a narrow chest, long slender legs and slightly oversized paws. Its pink tongue lolls out of an open mouth in a relaxed, friendly and playful expression. It looks like a young, curious, affectionate one-year-old dog, never majestic, proud, dignified, stern or stately.
+
+summary:
+[reference generation] a photorealistic single-shot portrait of the same young samoyed dog from the reference pictures, standing in a bright living room and turning its head gently towards the camera, in order to document its full body shape, its face and its coat texture. The dog must look exactly like the individual in the reference pictures - a slim, soft, puppy-faced young dog with a round head, big round eyes and a flat even coat - and not the thick, heavily ruffed, wedge-headed, dignified show-dog version of the breed.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - the exact same individual dog, keeping the rounded soft head, the big round dark eyes set wide apart, the short broad muzzle, the large black nose, the small outward-tilted triangular ears, the medium-length soft creamy-white coat that lies flat and even, the light and unclumped chest fur, and the slim youthful build with narrow chest and slender legs.
+
+detailed_description:
+The target video is in realistic photographic style. The dog is not the exaggerated show-dog samoyed: it has noticeably less fur than the breed is usually portrayed with, the fur is soft, medium-length and lies flat along the body, the neck and chest carry no thick ruff and no lion-like mane, the chest hair is light, smooth and evenly spread instead of gathered into clumps, and the head is round and soft rather than a broad sharp wedge. The dog's expression is open, playful and young, with its pink tongue out, and it is not stern, proud or dignified. Do not add heavy body volume, a large fluffy chest mane, a broad wedge-shaped skull, narrow almond eyes, a long snout, a stern gaze or a majestic pose.
+[Shot 1] [Full body, eye-level, vertical framing, the whole dog from nose to tail inside the frame], [static locked camera, no camera movement]. A bright modern living room with pale wooden floor and soft daylight coming through sheer curtains. <Subject 1> stands still facing the camera, then slowly turns its head about twenty degrees to one side while keeping its body still, and blinks once; its pink tongue stays out and the tip of its tail moves slightly. The dog's entire body, its face and its smooth even coat stay clearly visible and unobstructed throughout the shot.
+
+overall_soundscape:
+Quiet indoor room tone with faint air movement. Soft heavy panting of a young dog close to the microphone. A light collar jingle with each small movement. No voices and no speech.
+
+non_diegetic_music:
+None.

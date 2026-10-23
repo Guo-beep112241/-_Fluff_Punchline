@@ -59,7 +59,18 @@ def is_dataless(path):
 
 
 def blob_hash(path):
-    """算 git blob 哈希（blob <len>\\0 + 内容）。"""
+    """算这个文件在 git 里应有的 blob 哈希。
+
+    必须用 `git hash-object --path=<path>`：带 --path 才会按 .gitattributes
+    应用 clean filter，媒体文件算出的是 **LFS 指针** 的哈希（跟 HEAD 里存的一致）。
+    手算 sha1 会把真实 mp4 的哈希跟 HEAD 里的指针哈希比 → 全部误报「内容不同」。
+    """
+    r = subprocess.run(
+        ["git", "--git-dir", GIT_DIR, "hash-object", "--path=" + path, path],
+        capture_output=True, text=True, timeout=300, cwd=PROJECT)
+    if r.returncode == 0 and r.stdout.strip():
+        return r.stdout.strip()
+    # 兜底：git 不可用时退回手算（无 LFS 的纯文本文件仍正确）
     data = open(path, "rb").read()
     return hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
 

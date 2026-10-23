@@ -42,6 +42,30 @@ pink tongue lolling out
 | **站姿松垮微前倾** | 重心偏一边、**一只前爪略外撇**、头略低，不是四腿笔直 | ❌ `standing squarely` / `rigid posture` / `alert stance` / `proud pose` |
 | **气质幼态活泼** | 好奇、亲人、玩心重、有点急切 | ❌ `majestic` / `proud` / `dignified` / `regal` / `serious` / `stately` |
 | **标志表情** | 嘴张开、粉色舌头伸出 | ❌ `closed mouth` / `serious expression` |
+| **轻微外八** ⚠️ | 站立与行走时，**前后脚掌都略微朝外撇**（从正面看前脚外翻、从背面看两只后脚明显外撇）。**只是轻微**，不是明显的外八 | ❌ `toes pointing straight forward` / `feet parallel` / ❌ `wide bow-legged stance` / `exaggerated splay` |
+
+> **外八的准确描述**（这是小六二的招牌体态，生成运动镜头必须写进去）：
+> `the front and hind paws turn slightly outward from the midline, a very subtle toe-out, with the hind feet splayed only a little`
+> 强调「轻微」：`the splay is very slight and natural, not a wide bow-legged stance`
+>
+> **证据**：2026-05-01 天台新拍的两张（`x6_adult_stand_side_full_02` 侧面 / `x6_adult_stand_back_01` 背面）
+> 都能清楚看到后脚外撇。侧面照尤其明显：两只前脚掌都略微朝外。
+>
+> ⚠️ **外八是容易被忽略的部位** —— 不写模型就默认「标准平行站姿」，
+> 生成出来的小六二会显得很规矩、很假。
+
+### 已确认项
+
+| 项 | 结论 |
+|---|---|
+| **最终定妆脸部** | **H3 定妆视频 v1 的脸**（task `455456579522981`）—— 用户 2026-10-23 17:55 确认「很像了，最终定妆就用这个脸部样子」。已抽帧存 `10_工作素材/_work/v1_face_frame_white.jpg`（做过白平衡校正去掉 v1 偏黄的问题，**脸型结构未动**） |
+| **毛色** | **纯白**。2026-05-01 天台户外照在自然光下确认为白色 → 印证 v1 偏黄是提示词误写 `creamy-white` 所致，v2 已改为 `pure white` |
+| **真实毛量** | 背部和侧面毛**蓬松但服帖**，长度中等；不是 v0 那种炸开的浓密双层毛，也没有鬃毛团 |
+| **真实体型** | 偏瘦长、胸薄、腿修长；从侧面看躯干长、四肢修长，不是厚重敦实的标准萨摩耶 |
+| **尾巴** | 极大、蓬松、竖起，尾毛很长；从正后方看几乎挡住整个身体 |
+| **轻微外八（已生成验证）** | **H3 v3 定妆视频（task `455465099944357`）已成功生成出轻微外八**：四只脚掌的脚趾都能看到略微向外张，但没有变成罗圈腿。走路镜头的步态自然、四爪着地 |
+| **耳朵（⚠️ 未解决）** | v2/v3 生成出来的耳朵**比真实小六二大一些、立得更开**（真实小六二耳朵更小、更贴、尖端略向前折）。v4 提示词需补：`small, neat triangular ears that sit close to the head, slightly folded forward at the tips`，并否定 `large erect pointed ears` / `big upright ears` |
+| **毛色定量基准** | 额头毛 R−B：真实照片 +14.2 / H3 v2 +19.7 / H3 v3 +17.4 → **v3 没有比 v2 更黄**，暖偏主要来自场景灯光（暖色窗帘 + 木地板），不是提示词回退 |
 
 > **根因说明**：生成模型对「萨摩耶」有很强的品种先验 —— 浓密双层毛、宽楔形头、杏仁眼、威严感。
 > 真实小六二几乎每一条都与之相反。所以提示词里**必须显式反向描述**，

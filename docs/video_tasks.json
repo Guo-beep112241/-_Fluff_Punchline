@@ -68,8 +68,8 @@
       "purpose": "成年期定妆参考视频 v2 — 修正体色偏黄/体型偏标准/站姿端正",
       "submitted_at_ms": 1792749495642,
       "submitted_at_cst": "2026-10-23 17:58:15 CST",
-      "last_query_at_ms": 1792749495643,
-      "terminal_status": "submitted",
+      "last_query_at_ms": 1792750453996,
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_adult_stand_front_01",
         "x6_adult_face_front_sharp_01",
@@ -78,7 +78,40 @@
         "x6_adult_face_threequarter_01"
       ],
       "prompt_file": "prompts/verified/x6_adult_char_ref_v2.txt",
-      "notes": "v2 修正：creamy-white → pure white（v1 整只发黄）；加窄胸/前腿有缝/细腿；站姿改为松垮前倾+一前爪外撇；眼睛强调 round wide open；否定清单加 no yellow/cream/beige tint、no rigid stance、no broad chest"
+      "notes": "v2 修正：creamy-white → pure white（v1 整只发黄）；加窄胸/前腿有缝/细腿；站姿改为松垮前倾+一前爪外撇；眼睛强调 round wide open；否定清单加 no yellow/cream/beige tint、no rigid stance、no broad chest",
+      "last_error": "",
+      "delivery_retry_count": 1,
+      "last_query_at_cst": "2026-10-23 18:14:13 CST",
+      "delivered_at_cst": "2026-10-23 18:14:14 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/10_工作素材/habits/_curated/x6_adult_char_ref_stand_turn_02.mp4",
+      "delivered_bytes": 2657442
+    },
+    "455465099944357": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 6,
+      "ratio": "9:16",
+      "resolution": "2K",
+      "output_file": "10_工作素材/habits/_curated/x6_adult_char_ref_walk_splay_03.mp4",
+      "purpose": "成年定妆视频 v3 — 侧面走路 + 轻微外八",
+      "submitted_at_ms": 1792750496879,
+      "submitted_at_cst": "2026-10-23 18:14:56 CST",
+      "last_query_at_ms": 1792751676420,
+      "terminal_status": "delivered",
+      "reference_images": [
+        "x6_adult_stand_side_full_02",
+        "x6_adult_stand_back_01",
+        "x6_adult_stand_front_01",
+        "x6_adult_face_front_sharp_01"
+      ],
+      "prompt_file": "prompts/verified/x6_adult_char_ref_v3_walk_splay.txt",
+      "notes": "v3 = 运动镜头（侧面走路）并加入【轻微外八】：front and hind paws turn slightly outward from the midline, a very subtle toe-out；否定清单加 no wide bow-legged stance / no exaggerated splay。参考图换成新拍的无人侧面照 + 背面照。v2 已交付且毛色/体型/站姿/脸全部达标",
+      "last_query_at_cst": "2026-10-23 18:34:36 CST",
+      "last_error": "",
+      "delivery_retry_count": 1,
+      "delivered_at_cst": "2026-10-23 18:34:38 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/10_工作素材/habits/_curated/x6_adult_char_ref_walk_splay_03.mp4",
+      "delivered_bytes": 2645625
     }
   }
 }

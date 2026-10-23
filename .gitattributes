@@ -1,0 +1,14 @@
+# 媒体文件走 Git LFS。
+#
+# 为什么必须用 LFS：媒体是二进制，git 不做增量压缩。
+# 同一个成片改一版，plain git 会完整再存一份。
+# Ep1 33 镜 + 全季 188 镜 + 重做变体 ≈ 3.8GB —— plain git 撑爆 GitHub 的 1GB 软限制。
+# LFS 只存指针，文件本体单独存储，改版只占新增部分。
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.jpeg  filter=lfs diff=lfs merge=lfs -text
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.webp  filter=lfs diff=lfs merge=lfs -text
+*.mp4   filter=lfs diff=lfs merge=lfs -text
+*.mov   filter=lfs diff=lfs merge=lfs -text
+*.heic  filter=lfs diff=lfs merge=lfs -text
+*.heif  filter=lfs diff=lfs merge=lfs -text

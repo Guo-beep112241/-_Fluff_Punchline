@@ -1,0 +1,10 @@
+asset_id,filename,category,character_or_scene,stage,picture_label,dimensions,format,filesize_mb,duration_s,h3_compliant,selected_as,notes
+x6p-adult-01,x6_placeholder_adult_face_01.jpg,image,小六二(占位-非真实),adult,Picture 1,2400x2400,JPEG,0.70,,valid,定版主参考,占位素材。完全正面方形脸部特写，身份锚点。真实照片到位后整file替换
+x6p-puppy-01,x6_placeholder_puppy_face_01.jpg,image,小六二(占位-非真实),puppy,Picture 1,2400x3200,JPEG,0.66,,valid,定版主参考,占位素材。正面幼犬脸部特写，耳朵低垂。真实照片到位后整file替换
+cand-adult-fb,cand_adult_fullbody_1775224675227.jpg,image,小六二(占位-非真实),adult,,2400x3200,JPEG,0.71,,valid,备选,全身正面坐姿但眼睛闭合
+cand-adult-sit,cand_adult_sitting_1529429617124.jpg,image,小六二(占位-非真实),adult,,2400x3200,JPEG,0.95,,valid,备选,坐姿自然光，背景绿色虚化
+cand-adult-pink,cand_adult_pinkbg_1596492784531.jpg,image,小六二(占位-非真实),adult,,2400x3600,JPEG,2.10,,valid,备选,脸部最清晰但有项圈+粉色背景，未选用
+cand-puppy-fb,cand_puppy_fullbody_1681228792245.jpg,image,小六二(占位-非真实),puppy,,2400x1600,JPEG,0.21,,valid,备选,幼犬全身正面但黄色花田背景
+cand-puppy-ear,cand_puppy_floppyEar_1547660351.jpg,image,小六二(占位-非真实),puppy,,2400x3000,JPEG,0.87,,valid,备选,软塌耳最像3月龄但蓝天背景+藤椅道具
+cand-puppy-side,cand_puppy_profile_1767792378782.jpg,image,小六二(占位-非真实),puppy,,2400x3201,JPEG,0.79,,valid,备选,纯侧脸，毛质佳但不能做身份参考
+x6p-behavior-01,x6_placeholder_adult_behavior_01.mp4,video,小六二(占位-非真实),adult,,待定,MP4,,6,pending,行为参考,H3 Ref2VA 生成中 task 455207129047466

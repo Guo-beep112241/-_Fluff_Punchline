@@ -464,7 +464,9 @@ def render_shot(ep, shot, bgm, tmpdir):
         line_files.append(p)
         line_durs.append(probe_duration(p))
     speech = sum(line_durs) + max(0, len(line_durs) - 1) * 0.30
-    dur = max(4.0, min(6.2, max(dur_spec, speech + 0.85)))
+    # 台词更长时自动延长镜头（静帧可无损延长；有视频时最多拉到素材长度）
+    cap = (probe_duration(vpath) if have_video else 9.5)
+    dur = max(4.0, min(cap, max(dur_spec, speech + 0.95)))
     src_dur = probe_duration(vpath) if have_video else 0.0
 
     # --- 音轨：环境 + 音效 + 台词
@@ -499,7 +501,9 @@ def render_shot(ep, shot, bgm, tmpdir):
         t_cursor += d + 0.30
         idx += 1
 
-    if bgm:
+    # 「安静两拍」的镜头必须撤掉 BGM（bible/series.md §7.2 第 4 条）
+    use_bgm = bgm and shot.get("amb") != "silence"
+    if use_bgm:
         inputs += ["-stream_loop", "-1", "-i", bgm]
         filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=0.16,afade=t=in:st=0:d=0.6,"
                        "afade=t=out:st=%.2f:d=0.6[bgm]" % (idx, dur, max(0, dur - 0.7)))
@@ -596,6 +600,7 @@ def make_card(text_lines, dur, out, bgm=None, sub=None, title_size=64):
 
 
 def render_egg(ep, egg, tmpdir):
+    """彩蛋：真实素材直用。原片没有音轨，就补一层真实房间底噪，避免死寂。"""
     clip = os.path.join(HABITS_DIR, egg["clip"])
     if not os.path.exists(clip):
         return None, 0
@@ -605,25 +610,22 @@ def render_egg(ep, egg, tmpdir):
     tf = os.path.join(tmpdir, "egg.txt")
     with open(tf, "w", encoding="utf-8") as f:
         f.write(wrap_cn(cap, 13))
+    amb = os.path.join(audio_dir(ep), "amb_egg.wav")
+    if not os.path.exists(amb):
+        A.write_wav(amb, A.ambience("home", 12.0, seed=7))
     vf = ("[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,"
           "fps=24,noise=alls=9:allf=t+u,eq=saturation=0.88:contrast=1.03,"
           "drawtext=fontfile='%s':textfile='%s':fontcolor=white:fontsize=40:borderw=3:"
           "bordercolor=black@0.7:x=(w-text_w)/2:y=h-360[v]" % (FONT, esc_path(tf)))
     cmd = [ffmpeg(), "-y", "-v", "error", "-t", "%.2f" % dur, "-i", clip,
-           "-filter_complex", vf, "-map", "[v]", "-map", "0:a?",
-           "-af", "volume=1.6,aresample=48000", "-t", "%.2f" % dur,
+           "-stream_loop", "-1", "-i", amb,
+           "-filter_complex", vf + ";[1:a]atrim=0:%.2f,volume=0.55,aresample=48000[a]" % dur,
+           "-map", "[v]", "-map", "[a]", "-t", "%.2f" % dur,
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
            "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", out]
     r = run(cmd)
-    if r.returncode != 0 or not os.path.exists(out):
-        # 素材可能没有音轨，重试一次静音
-        cmd = [ffmpeg(), "-y", "-v", "error", "-t", "%.2f" % dur, "-i", clip,
-               "-f", "lavfi", "-t", "%.2f" % dur, "-i", "anullsrc=r=48000:cl=stereo",
-               "-filter_complex", vf, "-map", "[v]", "-map", "1:a", "-t", "%.2f" % dur,
-               "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
-               "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", out]
-        r = run(cmd)
     if not os.path.exists(out):
+        print("   彩蛋渲染失败：%s" % r.stderr[-300:])
         return None, 0
     return out, probe_duration(out)
 

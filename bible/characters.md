@@ -13,7 +13,7 @@
 |---|---|---|
 | `<Picture 1>` | `x6_adult_stand_front_01.jpg` | 全身正面站立（体型 / 四肢 / 脸） |
 | `<Picture 2>` | `x6_adult_face_front_sharp_01.jpg` | 面部正面特写（五官） |
-| `<Picture 3>` | `x6_adult_stand_threequarter_01.jpg` | 全身 3/4 侧 |
+| `<Picture 3>` | `x6_adult_lying_threequarter_01.jpg` | 3/4 侧趴卧轮廓 |
 | `<Picture 4>` | `x6_adult_stand_side_01.jpg` | 全身正侧 |
 | `<Picture 5>` | `x6_adult_face_threequarter_01.jpg` | 面部 3/4 侧 |
 

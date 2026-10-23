@@ -18,12 +18,18 @@ import re
 import subprocess
 import sys
 import time
+import hashlib
 
 PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CUR = os.path.join(PROJECT, "10_工作素材/characters/_curated/adult")
 TASKS_JSON = os.path.join(PROJECT, "docs/video_tasks.json")
 P = os.path.join(PROJECT, "episodes/ep01/prompts")
 OUT_DIR = os.path.join(PROJECT, "20_生成结果/ep01/verify")
+SNAP_DIR = os.path.join(P, "submitted")
+
+# Ref2VA 六段式，缺一段就不是合法的提示词
+SECTIONS = ["subject_definitions:", "summary:", "retention_analysis:",
+            "detailed_description:", "overall_soundscape:", "non_diegetic_music:"]
 
 # 每个验证镜：提示词文件 → 参考图（顺序即 <Picture 1..N>）→ 输出名
 SHOTS = [
@@ -43,7 +49,7 @@ SHOTS = [
         "out": "ep01_verify_v2_threequarter_768p.mp4",
         "images": [
             "x6_adult_face_front_sharp_01.jpg",
-            "x6_adult_stand_threequarter_01.jpg",
+            "x6_adult_lying_threequarter_01.jpg",
             "x6_adult_lying_full_02.jpg",
         ],
         "purpose": "第0批口型验证 V2 — 3/4 侧脸说中文（🟡 中风险）",
@@ -62,12 +68,32 @@ SHOTS = [
 
 
 def extract_prompt(md_path):
-    """从 md 的 ``` 代码块里取出提示词正文。"""
+    """从 md 的 ``` 代码块里取出提示词正文，并校验是完整的 Ref2VA 六段式。"""
     txt = open(md_path, encoding="utf-8").read()
     blocks = re.findall(r"```\n(.*?)\n```", txt, re.S)
     if not blocks:
         raise SystemExit("no code block in %s" % md_path)
-    return blocks[0].strip()
+    prompt = blocks[0].strip()
+    missing = [s for s in SECTIONS if s not in prompt]
+    if missing:
+        raise SystemExit("%s 提取到的不是完整六段式，缺：%s" % (md_path, missing))
+    if len(prompt) > 7000:
+        raise SystemExit("%s 提示词 %d 字符，超 H3 的 7000 上限" % (md_path, len(prompt)))
+    return prompt
+
+
+def snapshot(prompt, key, stamp):
+    """把【实际提交的那一版】提示词原样存盘。
+
+    必须存：提示词文件可能在提交后被改写（有人压缩措辞、有人修错别字），
+    那时磁盘上的版本 ≠ 平台跑的版本，出了错就复现不了。
+    """
+    os.makedirs(SNAP_DIR, exist_ok=True)
+    path = os.path.join(SNAP_DIR, "%s_%s.txt" % (key, stamp))
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(prompt + "\n")
+    sha = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
+    return os.path.relpath(path, PROJECT), sha
 
 
 def upload(path):
@@ -158,6 +184,8 @@ def main():
                     "task_id %s 与已有记录重复（%s），拒绝覆盖 —— 说明平台返回了重复 id，"
                     "先人工核对再继续" % (task_id, s["key"]))
             now = int(time.time() * 1000)
+            stamp = time.strftime("%Y%m%d-%H%M%S", time.localtime(now / 1000))
+            snap_path, sha = snapshot(prompt, s["key"], stamp)
             doc["tasks"][task_id] = {
                 "model": "MiniMax-H3",
                 "mode": "Ref2VA",
@@ -171,6 +199,8 @@ def main():
                 "terminal_status": "submitted",
                 "reference_images": [os.path.splitext(i)[0] for i in s["images"]],
                 "prompt_file": os.path.relpath(os.path.join(P, s["md"]), PROJECT),
+                "submitted_prompt_snapshot": snap_path,
+                "submitted_prompt_sha256": sha,
                 "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），"
                          "场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。"
                          "结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",

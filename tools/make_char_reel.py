@@ -57,13 +57,13 @@ def ffmpeg_bin():
 # 顺序 = 分镜逻辑：全身形态 → 面部 → 坐姿 → 趴卧
 ORDER = [
     ("x6_adult_stand_front_01",        "全身 · 正面站立",        "STAND / FRONT"),
-    ("x6_adult_stand_threequarter_01", "全身 · 3/4 侧站",        "STAND / 3-4"),
+    ("x6_adult_lying_threequarter_01", "全身 · 3/4 侧趴卧",     "LYING / 3-4"),
     ("x6_adult_stand_side_01",         "全身 · 正侧站",          "STAND / PROFILE"),
     ("x6_adult_face_front_sharp_01",   "面部 · 正面（最清晰）",  "FACE / FRONT"),
     ("x6_adult_face_threequarter_01",  "面部 · 3/4 侧",          "FACE / 3-4"),
     ("x6_adult_face_front_01",         "面部 · 正面",            "FACE / FRONT"),
     ("x6_adult_face_front_tongue_01",  "面部 · 正面吐舌",        "FACE / FRONT"),
-    ("x6_adult_sit_half_01",           "坐姿 · 半身",            "SIT"),
+    ("x6_adult_lying_half_01",           "趴卧抬头 · 半身",        "LYING"),
     ("x6_adult_lying_full_02",         "趴卧 · 全身吐舌",        "LYING / FULL"),
     ("x6_adult_lying_full_01",         "趴卧 · 全身",            "LYING / FULL"),
     ("x6_adult_lying_chin_down_01",    "趴 · 下颌贴地",          "LYING / CHIN DOWN"),

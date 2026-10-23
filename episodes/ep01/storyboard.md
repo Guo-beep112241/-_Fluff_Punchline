@@ -107,8 +107,8 @@
 
 | 类别 | 具体素材 | 用在哪些镜 |
 |---|---|---|
-| **定妆照（主参考）** | ①`x6_adult_stand_front_01.jpg` 全身正面｜②`x6_adult_face_front_sharp_01.jpg` 面部正面｜③`x6_adult_stand_threequarter_01.jpg` 全身 3/4 侧｜④`x6_adult_stand_side_01.jpg` 全身正侧｜⑤`x6_adult_face_threequarter_01.jpg` 面部 3/4 侧 | 几乎全部镜头 |
-| **姿态参考照** | `x6_adult_lying_head_01.jpg`（俯趴，宿舍地板构图底图）｜`x6_adult_lying_full_02.jpg`（3/4 趴卧）｜`x6_adult_lying_chin_down_01.jpg`（下颌贴地）｜`x6_adult_stand_back_01.jpg`（背面站）｜`x6_adult_sit_half_01.jpg`（3/4 坐） | 05/08/10/13/17/20/24/26/30/34 |
+| **定妆照（主参考）** | ①`x6_adult_stand_front_01.jpg` 全身正面｜②`x6_adult_face_front_sharp_01.jpg` 面部正面｜③`x6_adult_lying_threequarter_01.jpg` 3/4 侧趴卧｜④`x6_adult_stand_side_01.jpg` 全身正侧｜⑤`x6_adult_face_threequarter_01.jpg` 面部 3/4 侧 | 几乎全部镜头 |
+| **姿态参考照** | `x6_adult_lying_head_01.jpg`（俯趴，宿舍地板构图底图）｜`x6_adult_lying_full_02.jpg`（3/4 趴卧）｜`x6_adult_lying_chin_down_01.jpg`（下颌贴地）｜`x6_adult_stand_back_01.jpg`（背面站）｜`x6_adult_lying_half_01.jpg`（3/4 趴卧抬头） | 05/08/10/13/17/20/24/26/30/34 |
 | **动态参考（成年）** | `x6_adult_char_ref_walk_splay_03.mp4`（v3 定妆：走路＋轻微外八）｜`x6_adult_char_ref_stand_turn_01/02.mp4`（站立转身） | 04/12/17/23/30/33 |
 | **场景实景图** | ⚠️ **`10_工作素材/scenes/` 目前为空**。需要三张竖屏实景：① 教学楼公告栏 ② 宿舍地板（贴地视角）③ 排练室（侧光＋旧地毯）。手机随手拍即可。**未补拍前，构图按第五节「背景做减法」执行** | 01–05、07–08、18–19、21–22、24、29、32、34 |
 | **真实行为视频片段** | `x6_puppy_carry_slipper_07`（叼物走，仅作动作节奏参考，**不作成人外形参考**）｜`x6_puppy_run_to_cam_06`（跑向镜头） | 03、04 |

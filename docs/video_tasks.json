@@ -50,7 +50,7 @@
         "x6_adult_face_threequarter_01"
       ],
       "prompt_file": "prompts/verified/x6_adult_char_ref_v1.txt",
-      "notes": "针对用户反馈修正：dense double-coat → medium-length flat coat；broad wedge-shaped head → rounded soft head；almond-shaped eyes → large round eyes；补 chest fur unclumped；去 majestic/proud/dignified",
+      "notes": "针对用户反馈修正：dense double-coat → medium-length flat coat；broad wedge-shaped head → rounded soft head；almond-shaped eyes → large round eyes；补 chest fur unclumped；去 majestic/proud/dignified | 参考图已于 2026-10-23 更名（复核发现原文件名与实拍姿态不符）：x6_adult_stand_threequarter_01 → x6_adult_lying_threequarter_01。本条记录保留提交时的旧名，以如实反映当时喂给 H3 的内容。",
       "last_query_at_cst": "2026-10-23 17:56:23 CST",
       "last_error": "",
       "delivery_retry_count": 1,
@@ -78,7 +78,7 @@
         "x6_adult_face_threequarter_01"
       ],
       "prompt_file": "prompts/verified/x6_adult_char_ref_v2.txt",
-      "notes": "v2 修正：creamy-white → pure white（v1 整只发黄）；加窄胸/前腿有缝/细腿；站姿改为松垮前倾+一前爪外撇；眼睛强调 round wide open；否定清单加 no yellow/cream/beige tint、no rigid stance、no broad chest",
+      "notes": "v2 修正：creamy-white → pure white（v1 整只发黄）；加窄胸/前腿有缝/细腿；站姿改为松垮前倾+一前爪外撇；眼睛强调 round wide open；否定清单加 no yellow/cream/beige tint、no rigid stance、no broad chest | 参考图已于 2026-10-23 更名（复核发现原文件名与实拍姿态不符）：x6_adult_stand_threequarter_01 → x6_adult_lying_threequarter_01。本条记录保留提交时的旧名，以如实反映当时喂给 H3 的内容。",
       "last_error": "",
       "delivery_retry_count": 1,
       "last_query_at_cst": "2026-10-23 18:14:13 CST",
@@ -129,7 +129,7 @@
         "x6_adult_lying_full_02"
       ],
       "prompt_file": "episodes/ep01/prompts/verify_v1_front.md",
-      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",
+      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。 | 注意：本条提交于 2026-10-23 20:54，用的是当时提示词文件的版本；20:58 提示词文件被压缩改写（detailed_description 从 522/525/538 词压到 495/499/496 词），参考图分配、台词、场景设计、变量控制均未变。V3 的实际提交原文已存档于 episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
       "last_query_at_ms": 1792760063934,
       "last_query_at_cst": "2026-10-23 20:54:23 CST",
       "last_error": "",
@@ -152,7 +152,7 @@
         "x6_adult_lying_full_02"
       ],
       "prompt_file": "episodes/ep01/prompts/verify_v2_threequarter.md",
-      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",
+      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。 | 参考图已于 2026-10-23 更名（复核发现原文件名与实拍姿态不符）：x6_adult_stand_threequarter_01 → x6_adult_lying_threequarter_01。本条记录保留提交时的旧名，以如实反映当时喂给 H3 的内容。 | 注意：本条提交于 2026-10-23 20:54，用的是当时提示词文件的版本；20:58 提示词文件被压缩改写（detailed_description 从 522/525/538 词压到 495/499/496 词），参考图分配、台词、场景设计、变量控制均未变。V3 的实际提交原文已存档于 episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
       "last_query_at_ms": 1792760067819,
       "last_query_at_cst": "2026-10-23 20:54:27 CST",
       "last_error": "",
@@ -174,11 +174,13 @@
         "x6_adult_lying_full_02"
       ],
       "prompt_file": "episodes/ep01/prompts/verify_v3_mouth_covered.md",
-      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。",
+      "notes": "第0批技术验证。V1/V2/V3 台词完全相同（相声讲究说学逗唱。），场景与角色状态一致，唯一变量 = 脸朝向 + 嘴部遮挡 + lip-sync 措辞。结果决定全季台词策略：🔴正面 / 🟡3-4侧 / 🟢嘴部遮挡。 | 注意：本条提交于 2026-10-23 20:54，用的是当时提示词文件的版本；20:58 提示词文件被压缩改写（detailed_description 从 522/525/538 词压到 495/499/496 词），参考图分配、台词、场景设计、变量控制均未变。V3 的实际提交原文已存档于 episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
       "last_query_at_ms": 1792760072708,
       "last_query_at_cst": "2026-10-23 20:54:32 CST",
       "last_error": "",
-      "delivery_retry_count": 0
+      "delivery_retry_count": 0,
+      "submitted_prompt_snapshot": "episodes/ep01/prompts/submitted/verify_v3_mouth_covered_submitted.txt",
+      "submitted_prompt_sha256": "d85ef6e4fccbbc41c1df01df2b6e445fe57f6b75480dd9177de4dc377ee77497"
     }
   }
 }

@@ -79,11 +79,11 @@ def main():
 
     panels = [
         (os.path.join(CUR, "x6_adult_stand_front_01.jpg"),      "正面全身",   "FRONT / STANDING"),
-        (os.path.join(CUR, "x6_adult_stand_threequarter_01.jpg"), "3/4 侧全身", "3-4 VIEW"),
+        (os.path.join(CUR, "x6_adult_lying_threequarter_01.jpg"), "3/4 侧趴卧", "3-4 LYING"),
         (os.path.join(CUR, "x6_adult_stand_side_full_02.jpg"),  "正侧全身",   "PROFILE"),
         (os.path.join(CUR, "x6_adult_stand_back_01.jpg"),       "背面全身",   "BACK / TAIL"),
         (extract_v1_face(),                                    "脸部（定妆版）", "FACE — APPROVED v1"),
-        (os.path.join(CUR, "x6_adult_sit_half_01.jpg"),         "坐姿",       "SITTING"),
+        (os.path.join(CUR, "x6_adult_lying_half_01.jpg"),         "趴卧抬头",   "LYING / HEAD UP"),
     ]
 
     COLS = 2

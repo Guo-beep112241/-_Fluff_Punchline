@@ -524,10 +524,16 @@ def render_shot(ep, shot, bgm, tmpdir):
         vin = "0:v"
     else:
         inputs = ["-loop", "1", "-t", "%.3f" % dur, "-i", fpath] + inputs
+        # 推拉交替：偶数镜缓推、奇数镜缓拉，避免每镜都同一个方向
+        if sid % 2 == 0:
+            zexpr = "if(eq(on,0),1.0,min(zoom+0.00055,1.07))"
+        else:
+            zexpr = "if(eq(on,0),1.07,max(zoom-0.00055,1.0))"
+        xe = "iw/2-(iw/zoom/2)%+d" % (int(18 * (1 if sid % 4 < 2 else -1)))
         filters.insert(0, "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,"
                           "crop=1080:1920,setsar=1,fps=24,"
-                          "zoompan=z='min(zoom+0.0008,1.06)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
-                          "s=1080x1920:fps=24,trim=0:%.3f,setpts=PTS-STARTPTS[v]" % dur)
+                          "zoompan=z='%s':d=1:x='%s':y='ih/2-(ih/zoom/2)':"
+                          "s=1080x1920:fps=24,trim=0:%.3f,setpts=PTS-STARTPTS[v]" % (zexpr, xe, dur))
         vin = "0:v"
 
     # --- 字幕

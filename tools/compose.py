@@ -43,10 +43,7 @@ W, H = 1080, 1920
 CUTOUT_OK = {
     "x6_adult_stand_front_01.jpg",
     "x6_adult_stand_side_full_02.jpg",
-    "x6_adult_stand_side_01.jpg",
     "x6_adult_lying_full_02.jpg",
-    "x6_adult_lying_head_01.jpg",
-    "x6_adult_lying_chin_down_01.jpg",
 }
 CUT_DIR = os.path.join(PROJECT, "10_工作素材", "characters", "_curated", "adult_cut")
 
@@ -61,20 +58,17 @@ def cutout(ref_path):
     if os.path.exists(out):
         return Image.open(out).convert("RGBA")
     from rembg import remove, new_session
-    session = new_session("u2net")
+    session = new_session("isnet-general-use")
     im = Image.open(ref_path).convert("RGB")
     # 太大的图先缩一下，抠图快很多，边缘反而更干净
     if max(im.size) > 2000:
         s = 2000 / max(im.size)
         im = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
-    res = remove(im, session=session, alpha_matting=True,
-                 alpha_matting_foreground_threshold=250,
-                 alpha_matting_background_threshold=15,
-                 alpha_matting_erode_size=8)
+    res = remove(im, session=session, alpha_matting=False)
     # 硬阈值去半透明暗边，再羽化 —— rembg 的软边会带一圈原背景的脏灰
     a = np.array(res.getchannel("A")).astype(np.uint8)
     a = np.where(a > 96, 255, 0).astype(np.uint8)
-    res.putalpha(Image.fromarray(a).filter(ImageFilter.GaussianBlur(1.1)))
+    res.putalpha(Image.fromarray(a).filter(ImageFilter.GaussianBlur(1.4)))
     res = trim_alpha(res)
     res.save(out)
     return res
@@ -262,7 +256,7 @@ def compose_one(shot, out_path):
     d = ImageDraw.Draw(sh)
     ew, eh = int(tw * 1.15), max(30, int(th * 0.22))
     cxs, cys = int(W * cx), int(H * floor - eh * 0.28)
-    d.ellipse([cxs - ew // 2, cys - eh // 2, cxs + ew // 2, cys + eh // 2], fill=135)
+    d.ellipse([cxs - ew // 2, cys - eh // 2, cxs + ew // 2, cys + eh // 2], fill=110)
     sh = sh.filter(ImageFilter.GaussianBlur(max(14, eh // 2)))
     dark = Image.new("RGBA", (W, H), (14, 12, 10, 255))
     dark.putalpha(sh)

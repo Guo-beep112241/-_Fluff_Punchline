@@ -193,10 +193,15 @@ def handle_task(task_id, record, dry_run=False):
     record["last_query_at_cst"] = cst_stamp()
 
     url = extract_download_url(payload)
-    if code != 200 or status != "succeeded" or not url:
-        record["last_error"] = "code=%s status=%s — %s" % (code, status, message)
+    # ⚠️ Connector 成功时 code = 0（不是 200）。曾写成 `code != 200`，
+    # 导致成功路径永远不触发 —— 静默失败，会让整条已生成的任务白跑。
+    # 判定标准以 status == "succeeded" 且拿到了链接为准，code 只作参考。
+    code_ok = code in (0, 200, "0", "200", None)
+    if not code_ok or status != "succeeded" or not url:
+        record["last_error"] = "code=%s status=%s%s — %s" % (
+            code, status, "" if url else " (无下载链接)", message)
         record["delivery_retry_count"] = int(record.get("delivery_retry_count", 0)) + 1
-        log("  [x] 仍未取回：%s" % message)
+        log("  [x] 仍未取回：%s%s" % (message, "" if url else " (响应里没有下载链接)"))
         return False
 
     if dry_run:

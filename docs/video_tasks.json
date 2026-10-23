@@ -40,8 +40,8 @@
       "purpose": "成年期定妆参考视频 v1 — 真实照片版（修正毛量/脸型/胸毛/气质）",
       "submitted_at_ms": 1792748409138,
       "submitted_at_cst": "2026-10-23 17:40:09 CST",
-      "last_query_at_ms": 1792748409138,
-      "terminal_status": "submitted",
+      "last_query_at_ms": 1792749383728,
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_adult_stand_front_01",
         "x6_adult_face_front_sharp_01",
@@ -50,7 +50,35 @@
         "x6_adult_face_threequarter_01"
       ],
       "prompt_file": "prompts/verified/x6_adult_char_ref_v1.txt",
-      "notes": "针对用户反馈修正：dense double-coat → medium-length flat coat；broad wedge-shaped head → rounded soft head；almond-shaped eyes → large round eyes；补 chest fur unclumped；去 majestic/proud/dignified"
+      "notes": "针对用户反馈修正：dense double-coat → medium-length flat coat；broad wedge-shaped head → rounded soft head；almond-shaped eyes → large round eyes；补 chest fur unclumped；去 majestic/proud/dignified",
+      "last_query_at_cst": "2026-10-23 17:56:23 CST",
+      "last_error": "",
+      "delivery_retry_count": 1,
+      "delivered_at_cst": "2026-10-23 17:56:27 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/10_工作素材/habits/_curated/x6_adult_char_ref_stand_turn_01.mp4",
+      "delivered_bytes": 2092435
+    },
+    "455461320544655": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "duration_s": 6,
+      "ratio": "9:16",
+      "resolution": "2K",
+      "output_file": "10_工作素材/habits/_curated/x6_adult_char_ref_stand_turn_02.mp4",
+      "purpose": "成年期定妆参考视频 v2 — 修正体色偏黄/体型偏标准/站姿端正",
+      "submitted_at_ms": 1792749495642,
+      "submitted_at_cst": "2026-10-23 17:58:15 CST",
+      "last_query_at_ms": 1792749495643,
+      "terminal_status": "submitted",
+      "reference_images": [
+        "x6_adult_stand_front_01",
+        "x6_adult_face_front_sharp_01",
+        "x6_adult_stand_threequarter_01",
+        "x6_adult_stand_side_01",
+        "x6_adult_face_threequarter_01"
+      ],
+      "prompt_file": "prompts/verified/x6_adult_char_ref_v2.txt",
+      "notes": "v2 修正：creamy-white → pure white（v1 整只发黄）；加窄胸/前腿有缝/细腿；站姿改为松垮前倾+一前爪外撇；眼睛强调 round wide open；否定清单加 no yellow/cream/beige tint、no rigid stance、no broad chest"
     }
   }
 }

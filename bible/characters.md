@@ -24,7 +24,7 @@ a rounded soft puppy-like head with a broad round forehead,
 large round dark brown eyes set wide apart,
 a short broad muzzle, a large round black nose,
 small triangular ears held slightly outward,
-a medium-length soft creamy-white coat that lies flat and even,
+a medium-length soft pure white coat that lies flat and even,
 pink tongue lolling out
 ```
 
@@ -33,17 +33,22 @@ pink tongue lolling out
 | 判据 | 说明 | **必须避免的写法** |
 |---|---|---|
 | **头是圆的** | 额头宽而圆，颅骨圆钝，没有楔形收窄 | ❌ `wedge-shaped head` / `broad wedge` / `muzzle` 尖瘦 |
-| **眼睛大而圆** | 深棕近黑、眼距宽，眼神幼态 | ❌ `almond-shaped eyes` / `narrow eyes` / `sharp gaze` |
+| **眼睛大而圆** | 深棕近黑、眼距宽，眼神幼态，**睁圆** | ❌ `almond-shaped eyes` / `narrow eyes` / `sharp gaze` |
 | **口鼻短而宽** | 鼻梁短，嘴部宽厚 | ❌ `long snout` / `refined muzzle` |
-| **毛量适中、服帖** | 中等长度、微微蓬松、顺着身体躺平；暖奶油白不是纯白 | ❌ `dense double-coat` / `thick fur` / `heavy ruff` / `fluffy mane` / `voluminous` |
+| **毛量适中、服帖** | 中等长度、微微蓬松、顺着身体躺平 | ❌ `dense double-coat` / `thick fur` / `heavy ruff` / `fluffy mane` / `voluminous` |
 | **前胸毛平顺** | 胸毛轻薄均匀，不结团、不起鬃 | ❌ `thick chest ruff` / `lion-like mane` / `clumped chest fur` |
-| **体型偏瘦幼态** | 窄胸、细长腿、大爪子，站立时身体不厚重 | ❌ `stocky` / `broad chest` / `massive` / `powerful build` |
-| **气质幼态活泼** | 好奇、亲人、玩心重 | ❌ `majestic` / `proud` / `dignified` / `regal` / `serious` / `stately` |
+| **毛色是白，不是米黄** ⚠️ | 主体是**纯白**；只有耳内、口鼻、腹部有一点点暖奶油色 | ❌ `creamy-white` / `cream-coloured` / `beige` / `ivory` —— v1 写成 creamy，结果整只狗偏黄 |
+| **体型偏瘦窄胸** | 胸窄、**两前腿之间有缝**、腿细长、爪子略大 | ❌ `stocky` / `broad chest` / `massive` / `powerful build` / `thick legs` |
+| **站姿松垮微前倾** | 重心偏一边、**一只前爪略外撇**、头略低，不是四腿笔直 | ❌ `standing squarely` / `rigid posture` / `alert stance` / `proud pose` |
+| **气质幼态活泼** | 好奇、亲人、玩心重、有点急切 | ❌ `majestic` / `proud` / `dignified` / `regal` / `serious` / `stately` |
 | **标志表情** | 嘴张开、粉色舌头伸出 | ❌ `closed mouth` / `serious expression` |
 
 > **根因说明**：生成模型对「萨摩耶」有很强的品种先验 —— 浓密双层毛、宽楔形头、杏仁眼、威严感。
 > 真实小六二几乎每一条都与之相反。所以提示词里**必须显式反向描述**，
 > 只靠参考图不够，文字要正面按压住品种先验。
+>
+> **v1 的教训**：`creamy-white` 这个词是我从占位图沿用的，结果整只狗发黄。
+> 特征词必须**逐条从真实照片核对**，不能凭印象写近义描述。
 
 ### 性格档案（待补）
 

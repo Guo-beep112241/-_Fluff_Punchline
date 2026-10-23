@@ -230,15 +230,18 @@
       "purpose": "额度探针 — 验证 H3 额度耗尽时 Hailuo 2.3 是否仍可提交（结论：可，走老 Token Plan 池）",
       "submitted_at_ms": 1792766358532,
       "submitted_at_cst": "2026-10-23 22:39:18 CST",
-      "terminal_status": "succeeded",
+      "terminal_status": "delivered",
       "reference_images": [],
       "reference_videos": [],
       "prompt_file": "",
       "notes": "文本生视频。实测：输出 1366x768 横屏（ratio 9:16 被忽略），只有首帧模式能保竖屏。无声输出。",
-      "last_query_at_ms": 1792766358532,
-      "last_query_at_cst": "2026-10-23 22:39:18 CST",
+      "last_query_at_ms": 1792799041442,
+      "last_query_at_cst": "2026-10-24 07:44:01 CST",
       "last_error": "",
-      "delivery_retry_count": 0
+      "delivery_retry_count": 0,
+      "delivered_at_cst": "2026-10-24 07:44:01 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/20_生成结果/ep01/probe/hailuo_pool_probe.mp4",
+      "delivered_bytes": 370225
     }
   }
 }

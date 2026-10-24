@@ -62,6 +62,8 @@ VOICES = {
     "teacher": ("zh-CN-XiaoxiaoNeural", "-2%", "-5Hz"),
     "panel": ("zh-CN-YunjianNeural", "-12%", "-55Hz"),
     "classmate": ("zh-CN-YunxiaNeural", "+8%", "+5Hz"),
+    "dougen": ("zh-CN-YunyangNeural", "+14%", "+15Hz"),   # 甲·逗哏
+    "penggen": ("zh-CN-YunjianNeural", "+2%", "-25Hz"),   # 乙·捧哏
 }
 
 EDGE_TTS = os.path.expanduser("~/XiaoliuerVideoGen/venv/bin/edge-tts")

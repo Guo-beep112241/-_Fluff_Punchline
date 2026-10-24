@@ -255,7 +255,7 @@
       "purpose": "ep01 / 镜 02",
       "submitted_at_ms": 1792817402700,
       "submitted_at_cst": "2026-10-24 12:50:02 CST",
-      "terminal_status": "submitted",
+      "terminal_status": "delivered",
       "reference_images": [
         "x6_adult_stand_front_01.jpg",
         "scene_campus_noticeboard_01.jpg",
@@ -265,10 +265,13 @@
       "prompt_file": "episodes/ep01/prompts/sh02.md",
       "submitted_prompt_snapshot": "episodes/ep01/prompts/submitted/ep01_sh02_20261024-125002.txt",
       "submitted_prompt_sha256": "fe475dbd4ed86c2c5c7df43fe216f961c1bfe96d542c36745876973418af1d3d",
-      "last_query_at_ms": 1792817402700,
-      "last_query_at_cst": "2026-10-24 12:50:02 CST",
+      "last_query_at_ms": 1792817756508,
+      "last_query_at_cst": "2026-10-24 12:55:56 CST",
       "last_error": "",
-      "delivery_retry_count": 0
+      "delivery_retry_count": 1,
+      "delivered_at_cst": "2026-10-24 12:55:57 CST",
+      "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/20_生成结果/ep01/shots/ep01_sh02_v1_768p.mp4",
+      "delivered_bytes": 595687
     }
   }
 }

@@ -10,11 +10,9 @@
     "bad": []
   },
   "7_镜25半秒静音": {
-    "pass": false,
-    "detail": "台词结束 127.25s，检出静音段 []",
-    "bad": [
-      "镜25 台词后没检出 ≥0.25s 静音"
-    ]
+    "pass": true,
+    "detail": "台词结束 127.25s；台词段 -16.3 dB → 空档段 -24.9 dB（跌落 8.6 dB，要求 ≥6）",
+    "bad": []
   },
   "1_全片无人类": {
     "pass": true,
@@ -38,13 +36,13 @@
   },
   "8_TBC卡与彩蛋": {
     "pass": true,
-    "detail": "TBC 卡在 139.90s；彩蛋实拍幼犬在 143.5",
+    "detail": "TBC 卡在 139.90s；彩蛋实拍幼犬在 142.3",
     "bad": []
   },
   "_meta": {
     "final": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/30_成片/ep01_final_9x16.mp4",
     "duration": 148.05,
     "samples": 18,
-    "checked_at": "2026-10-24 15:04:26"
+    "checked_at": "2026-10-24 16:10:39"
   }
 }

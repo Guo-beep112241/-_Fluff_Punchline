@@ -527,6 +527,237 @@ def esc_path(p):
     return p.replace("\\", "\\\\").replace(":", "\\:").replace("'", "\\'")
 
 
+def _build_single_layer(ep, shot, bgm, dur, line_files, line_durs,
+                        layer, audio_base):
+    """只构建一层的音频图（用于分层导出）。
+
+    与 build_audio_graph 的电平/时间轴处理完全一致，
+    所以导出的分层和成片是逐样本对得上的。
+
+    坑：其它层若也建了输出标签，会变成独立输出流，
+    而 wav 只能写一条音轨（"wav muxer does not support more than
+    one stream of type audio"）。所以这里只建目标层。
+    """
+    inputs = []
+    filters = []
+    idx = audio_base
+    sid = shot["id"]
+
+    if layer == "amb":
+        amb = amb_file(ep, shot.get("amb", "dorm"), sid)
+        inputs += ["-stream_loop", "-1", "-i", amb]
+        filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f[out]"
+                       % (idx, dur, float(shot.get("amb_gain", 0.9))))
+    elif layer == "sfx":
+        names = [x for x in (shot.get("sfx") or []) if x][:3]
+        at = shot.get("sfx_at") or []
+        labels = []
+        for k, name in enumerate(names):
+            sp = sfx_file(ep, name, sid + k)
+            t0 = float(at[k]) if k < len(at) else [0.30, dur * 0.55, dur * 0.80][k]
+            inputs += ["-i", sp]
+            filters.append("[%d:a]adelay=%d|%d,apad=pad_dur=%.2f,atrim=0:%.3f,volume=0.85[sfx%d]"
+                           % (idx, int(t0 * 1000), int(t0 * 1000), dur, dur, k))
+            labels.append("[sfx%d]" % k)
+            idx += 1
+        if not labels:
+            return None
+        filters.append("".join(labels) +
+                       "amix=inputs=%d:duration=longest:normalize=0,aresample=48000[out]"
+                       % len(labels))
+    elif layer == "voice":
+        gap = float(shot.get("gap", 0.30))
+        lead = float(shot.get("lead", 0.42))
+        labels = []
+        t_cursor = lead
+        for k, (p, d) in enumerate(zip(line_files, line_durs)):
+            if t_cursor + d > dur - 0.15:
+                d = max(0.4, dur - 0.15 - t_cursor)
+            inputs += ["-i", p]
+            filters.append("[%d:a]adelay=%d|%d,atrim=0:%.3f,volume=1.0[v%d]"
+                           % (idx, int(t_cursor * 1000), int(t_cursor * 1000), d + 0.05, k))
+            labels.append("[v%d]" % k)
+            t_cursor += d + gap
+            idx += 1
+        if not labels:
+            return None
+        filters.append("".join(labels) +
+                       "amix=inputs=%d:duration=longest:normalize=0,aresample=48000[out]"
+                       % len(labels))
+    elif layer == "bgm":
+        if not bgm or shot.get("amb") == "silence":
+            return None
+        bgm_end = dur
+        bu = shot.get("bgm_until")
+        if bu is not None:
+            bgm_end = max(0.8, min(dur, float(bu)))
+        gain = float(shot.get("bgm_gain", 0.30))
+        gate = "1"
+        bg = shot.get("bgm_gap")
+        if bg:
+            gate = "if(between(t,%.3f,%.3f),0,1)" % (float(bg[0]), float(bg[1]))
+        inputs += ["-stream_loop", "-1", "-i", bgm]
+        if bgm_end < dur - 0.05:
+            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
+                           "afade=t=out:st=%.2f:d=0.35,volume=eval=frame:volume='%s'[out]"
+                           % (idx, bgm_end, gain, max(0, bgm_end - 0.4), gate))
+        else:
+            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
+                           "afade=t=out:st=%.2f:d=0.6,volume=eval=frame:volume='%s'[out]"
+                           % (idx, dur, gain, max(0, dur - 0.7), gate))
+    else:
+        return None
+
+    return {"inputs": inputs, "filters": filters, "mix_labels": ["[out]"],
+            "stem_labels": {"out": "[out]"}}
+
+
+def build_audio_graph(ep, shot, bgm, dur, line_files, line_durs,
+                      want_stems=False, audio_base=1, only_layer=None):
+    """构建一镜的音频滤镜图。
+
+    分层结构（每层都是独立 label，便于单独导出）：
+      [amb]  房间底噪  —— 铺底
+      [bgm]  音乐      —— 铺底
+      [v0..] 台词      —— 人声（可整层静音，方便用户自己配音）
+      [sfx0..] 音效    —— 音效
+      [mix]  全部混合
+
+    want_stems=True 时额外产出每层的独立 label（[stem_amb] 等），
+    供 film_pipeline stems 命令导出分层 WAV。
+
+    only_layer="sfx" 等 —— 只构建这一层，不建总混音。
+        导出单层时用：其它分支若留着就会变成独立输出流，
+        而 wav 只能写一条音轨（实测报 "wav muxer does not support
+        more than one stream of type audio"）。
+
+    混音层级（按 -16 LUFS 成片倒推）：
+      对白 ≈ -23 dB > 音乐 ≈ -32 dB > 房间底噪 ≈ -37 dB
+    早期版本三档都挤在 -37 dB（音乐 gain=0.16），音乐被底噪完全掩蔽。
+    """
+    inputs = []
+    filters = []
+    mix_labels = []
+    stem_labels = {}
+    # audio_base：音频输入在 ffmpeg 输入列表里的起始索引。
+    #   渲染成片时 0 号是画面 → 音频从 1 起
+    #   导出纯音频分层时没有画面 → 音频从 0 起
+    idx = audio_base
+
+    def split(src, name):
+        """把一层既送进总混音，也留一份给 stems 导出。
+
+        src  是该层在滤镜图里的源标签（如 "[sfxbus]"）
+        name 是该层的逻辑名（如 "sfx"），决定 stem 输出文件名
+        注意：asplit 的每一路都必须有下游，否则 ffmpeg 报
+        "Filter X has an unconnected output"。
+        """
+        if only_layer is not None:
+            # 只建这一层：其它层完全不生成输出，
+            # 否则会变成独立输出流，wav 只能写一条音轨。
+            if name == only_layer:
+                stem_labels[name] = src
+            return
+        if want_stems:
+            # src 形如 "[sfxbus]"，去掉外层方括号再拼，避免出现 [[sfxbus]]
+            filters.append("%sasplit=2[%s][stem_%s]" % (src, name, name))
+            mix_labels.append("[%s]" % name)
+            stem_labels[name] = "[stem_%s]" % name
+        else:
+            # 不导出时不必 asplit，直接把源标签接到混音
+            mix_labels.append(src)
+
+    if only_layer is not None:
+        # 单层导出：只构建目标层需要的输入与滤镜，其它层一概不建
+        return _build_single_layer(ep, shot, bgm, dur, line_files, line_durs,
+                                   only_layer, audio_base)
+
+    # --- 1) 房间底噪
+    amb = amb_file(ep, shot.get("amb", "dorm"), shot["id"])
+    inputs += ["-stream_loop", "-1", "-i", amb]
+    filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f[amb]"
+                   % (idx, dur, float(shot.get("amb_gain", 0.9))))
+    idx += 1
+    split("[amb]", "amb")
+
+    # --- 2) 音效
+    sfx_labels = []
+    for k, name in enumerate([x for x in (shot.get("sfx") or []) if x][:3]):
+        sp = sfx_file(ep, name, shot["id"] + k)
+        at = shot.get("sfx_at") or []
+        t0 = float(at[k]) if k < len(at) else [0.30, dur * 0.55, dur * 0.80][k]
+        inputs += ["-i", sp]
+        filters.append("[%d:a]adelay=%d|%d,apad=pad_dur=%.2f,atrim=0:%.3f,volume=0.85[sfx%d]"
+                       % (idx, int(t0 * 1000), int(t0 * 1000), dur, dur, k))
+        sfx_labels.append("[sfx%d]" % k)
+        idx += 1
+    if sfx_labels:
+        # 音效层单独成组：既进总混音，也能整层导出
+        # amix 的输入标签是位置参数（紧跟在 "amix=" 后面），inputs= 才是数量
+        filters.append("".join(sfx_labels) +
+                       "amix=inputs=%d:duration=longest:normalize=0,aresample=48000[sfxbus]"
+                       % len(sfx_labels))
+        split("[sfxbus]", "sfx")
+    # --- 3) 台词
+    gap = float(shot.get("gap", 0.30))
+    lead = float(shot.get("lead", 0.42))
+    t_cursor = lead
+    v_labels = []
+    for k, (p, d) in enumerate(zip(line_files, line_durs)):
+        if t_cursor + d > dur - 0.15:
+            d = max(0.4, dur - 0.15 - t_cursor)
+        inputs += ["-i", p]
+        filters.append("[%d:a]adelay=%d|%d,atrim=0:%.3f,volume=1.0[v%d]"
+                       % (idx, int(t_cursor * 1000), int(t_cursor * 1000), d + 0.05, k))
+        v_labels.append("[v%d]" % k)
+        t_cursor += d + gap
+        idx += 1
+    if v_labels:
+        filters.append("".join(v_labels) +
+                       "amix=inputs=%d:duration=longest:normalize=0,aresample=48000[voice]"
+                       % len(v_labels))
+        split("[voice]", "voice")
+
+    # --- 4) 音乐
+    # 「安静两拍」的镜头必须撤掉 BGM（bible/series.md §7.2 第 4 条）
+    use_bgm = bgm and shot.get("amb") != "silence"
+    if use_bgm:
+        # bgm_until：台词说完就撤掉音乐，只留房间底噪 —— 「安静两拍后反转」
+        bgm_end = dur
+        bu = shot.get("bgm_until")
+        if bu is not None:
+            bgm_end = max(0.8, min(dur, float(bu)))
+        # 音乐层电平：对白下 9dB。低于此值会被房间底噪掩蔽，等于没铺音乐。
+        gain = float(shot.get("bgm_gain", 0.30))
+        # bgm_gap：把某个时间窗的音乐挖空 —— 「说完留半秒空，只留房间底噪」
+        #
+        # 坑：volume 滤镜的 eval 默认是 init —— 表达式只在初始化时算一次，
+        # 里面的 t 根本不随时间变，静音窗会完全失效（实测 t=2.5s 仍是 -21.1dB）。
+        # 必须显式写 eval=frame，表达式才会逐帧按时间戳求值。
+        gate = "1"
+        bg = shot.get("bgm_gap")
+        if bg:
+            gate = "if(between(t,%.3f,%.3f),0,1)" % (float(bg[0]), float(bg[1]))
+        inputs += ["-stream_loop", "-1", "-i", bgm]
+        if bgm_end < dur - 0.05:
+            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
+                           "afade=t=out:st=%.2f:d=0.35,volume=eval=frame:volume='%s'[bgm]"
+                           % (idx, bgm_end, gain, max(0, bgm_end - 0.4), gate))
+        else:
+            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
+                           "afade=t=out:st=%.2f:d=0.6,volume=eval=frame:volume='%s'[bgm]"
+                           % (idx, dur, gain, max(0, dur - 0.7), gate))
+        idx += 1
+        split("[bgm]", "bgm")
+
+    if only_layer is None:
+        filters.append("".join(mix_labels) +
+                       "amix=inputs=%d:duration=first:normalize=0,"
+                       "alimiter=limit=0.92,aresample=48000[mix]" % len(mix_labels))
+    return {"inputs": inputs, "filters": filters, "mix_labels": mix_labels,
+            "stem_labels": stem_labels}
+
+
 def render_shot(ep, shot, bgm, tmpdir):
     sid = shot["id"]
     dur_spec = float(shot.get("dur") or 5.0)
@@ -556,68 +787,11 @@ def render_shot(ep, shot, bgm, tmpdir):
     dur = max(4.0, min(cap, max(dur_spec, speech + pad)))
     src_dur = probe_duration(vpath) if have_video else 0.0
 
-    # --- 音轨：环境 + 音效 + 台词
-    inputs = []
-    filters = []
-    amix_labels = []
-    idx = 1  # 0 号输入永远是画面（视频或首帧静图）
-
-    amb = amb_file(ep, shot.get("amb", "dorm"), sid)
-    inputs += ["-stream_loop", "-1", "-i", amb]
-    filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=0.9[amb]" % (idx, dur))
-    amix_labels.append("[amb]")
-    idx += 1
-
-    for k, name in enumerate([x for x in (shot.get("sfx") or []) if x][:3]):
-        sp = sfx_file(ep, name, sid + k)
-        at = shot.get("sfx_at") or []
-        t0 = float(at[k]) if k < len(at) else [0.30, dur * 0.55, dur * 0.80][k]
-        inputs += ["-i", sp]
-        filters.append("[%d:a]adelay=%d|%d,apad=pad_dur=%.2f,atrim=0:%.3f,volume=0.85[sfx%d]"
-                       % (idx, int(t0 * 1000), int(t0 * 1000), dur, dur, k))
-        amix_labels.append("[sfx%d]" % k)
-        idx += 1
-
-    t_cursor = lead
-    for k, (p, d) in enumerate(zip(line_files, line_durs)):
-        if t_cursor + d > dur - 0.15:
-            d = max(0.4, dur - 0.15 - t_cursor)
-        inputs += ["-i", p]
-        filters.append("[%d:a]adelay=%d|%d,atrim=0:%.3f,volume=1.0[v%d]"
-                       % (idx, int(t_cursor * 1000), int(t_cursor * 1000), d + 0.05, k))
-        amix_labels.append("[v%d]" % k)
-        t_cursor += d + gap
-        idx += 1
-
-    # 「安静两拍」的镜头必须撤掉 BGM（bible/series.md §7.2 第 4 条）
-    use_bgm = bgm and shot.get("amb") != "silence"
-    if use_bgm:
-        # bgm_until：台词说完就撤掉音乐，只留房间底噪 —— 「安静两拍后反转」
-        bgm_end = dur
-        bu = shot.get("bgm_until")
-        if bu is not None:
-            bgm_end = max(0.8, min(dur, float(bu)))
-        gain = float(shot.get("bgm_gain", 0.16))
-        # bgm_gap：把某个时间窗的音乐挖空 —— 「说完留半秒空，只留房间底噪」
-        gate = "1"
-        bg = shot.get("bgm_gap")
-        if bg:
-            gate = "if(between(t,%.3f,%.3f),0,1)" % (float(bg[0]), float(bg[1]))
-        inputs += ["-stream_loop", "-1", "-i", bgm]
-        if bgm_end < dur - 0.05:
-            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
-                           "afade=t=out:st=%.2f:d=0.35,volume='%s'[bgm]"
-                           % (idx, bgm_end, gain, max(0, bgm_end - 0.4), gate))
-        else:
-            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
-                           "afade=t=out:st=%.2f:d=0.6,volume='%s'[bgm]"
-                           % (idx, dur, gain, max(0, dur - 0.7), gate))
-        amix_labels.append("[bgm]")
-        idx += 1
-
-    filters.append("%samix=inputs=%d:duration=first:normalize=0,"
-                   "alimiter=limit=0.92,aresample=48000[mix]"
-                   % ("".join(amix_labels), len(amix_labels)))
+    # --- 音轨：环境 + 音效 + 台词 + 音乐（分层构建，见 build_audio_graph）
+    graph = build_audio_graph(ep, shot, bgm, dur, line_files, line_durs)
+    inputs = graph["inputs"]
+    filters = graph["filters"]
+    amix_labels = graph["mix_labels"]
 
     # --- 画面
     if have_video:
@@ -822,16 +996,32 @@ def cmd_build(args):
         raise SystemExit("合成失败：%s" % r.stderr[-800:])
     # 统一响度（短视频平台目标 -16 LUFS / 真峰 ≤ -1.5 dBTP）
     #
-    # 为什么必须先压缩：原始混音是「对白脉冲 + 极轻房间底噪」，
-    # 测出来 input_i=-25.2 LUFS 而 input_tp=+2.3 dBFS（波峰因数 27dB）。
-    # 直接 loudnorm 会把限制器逼到极限，压完峰平均又掉回 -17 LUFS。
-    # 加一级 acompressor 把波峰因数压下来，再 loudnorm + alimiter，才能同时达标。
-    #   压缩器+单遍loudnorm+限制器 → 实测 -16.1 LUFS / 真峰 -1.9 dBFS
-    #   两遍 loudnorm（linear=true）→ -16.1 LUFS 但真峰 -0.0 dBFS（AAC 过冲顶不住），故用单遍
+    # 踩过的坑：早期版本用 acompressor(threshold=-30dB:ratio=4:makeup=8) + 单遍 loudnorm。
+    #   acompressor 的 makeup 是「倍数」不是 dB（8 → 实际 +9.4dB），
+    #   而 threshold=-30dB/ratio=4 正好落在对白段上，把台词自身波峰因数压掉，
+    #   台词均值从 -25.5dB 掉到 -34.6dB —— 安静段没被压，对白被压，
+    #   于是「台词→半秒空」的落差从 13.6dB 塌成 4.8dB，第⑦条自检永远过不了。
+    #
+    # 现在改成：两遍 loudnorm（linear=true = 纯静态增益，不改动态）+ 兜底限制器。
+    #   实测 I=-16.2 LUFS / 真峰 -2.5 dBFS / 台词→空档跌落 9.0 dB，三项同时达标。
+    #
+    # 注意：linear=true 必须用第一遍测出的 measured_* 参数，否则增益算不准。
     tmp_out = final.replace(".mp4", ".loud.mp4")
-    COMP = "acompressor=threshold=-30dB:ratio=4:attack=3:release=120:makeup=8"
-    af = ("%s,loudnorm=I=-16:TP=-1.5:LRA=11,"
-          "alimiter=limit=0.749:level=disabled:attack=1:release=50" % COMP)
+    m = run([ffmpeg(), "-hide_banner", "-nostats", "-i", final,
+             "-af", "loudnorm=I=-14.0:TP=-2.0:LRA=30:print_format=json",
+             "-f", "null", "-"])
+    jm = re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", m.stderr or "", re.S)
+    if jm:
+        j = json.loads(jm.group(0))
+        af = ("loudnorm=I=-14.0:TP=-2.0:LRA=%s:linear=true:"
+              "measured_I=%s:measured_TP=%s:measured_LRA=%s:measured_thresh=%s:offset=%s,"
+              "alimiter=limit=0.668:level=disabled:attack=1:release=50"
+              % (j["input_lra"], j["input_i"], j["input_tp"], j["input_lra"],
+                 j["input_thresh"], j["target_offset"]))
+    else:
+        # 测量失败时的兜底：纯静态增益 + 限制器（不改动态）
+        print("   ⚠️ loudnorm 测量失败，退回静态增益链")
+        af = "volume=9.2dB,alimiter=limit=0.668:level=disabled:attack=1:release=50"
     r2 = run([ffmpeg(), "-y", "-v", "error", "-i", final, "-c:v", "copy",
               "-af", af, "-c:a", "aac", "-b:a", "192k",
               "-ar", "48000", "-ac", "2", tmp_out])
@@ -851,11 +1041,175 @@ def cmd_build(args):
     return 0
 
 
+def cmd_stems(args):
+    """导出分层音频素材，供用户自己配音。
+
+    输出（20_生成结果/<ep>/stems/）：
+      voice.wav  台词轨（AI 配音，用户可整轨替换成自己的人声）
+      bgm.wav    音乐轨
+      amb.wav    房间底噪轨
+      sfx.wav    音效轨
+      bed.wav    铺底总轨（音乐+底噪+音效，不含人声）—— 直接录人声叠上去即可
+
+    所有轨与成片严格同长同起点（按镜逐段拼接），可直接对齐使用。
+    """
+    ep = args.ep
+    spec = load_spec(ep)
+    bgm = bgm_for(ep, spec)
+    outdir = os.path.join(OUT_ROOT, ep, "stems")
+    os.makedirs(outdir, exist_ok=True)
+    tmpdir = os.path.join(outdir, "_parts")
+    os.makedirs(tmpdir, exist_ok=True)
+
+    # 每镜时长必须与 build 完全一致，否则分层与成片对不上
+    plan = []
+    for s in spec["shots"]:
+        lines = s.get("lines") or []
+        durs = []
+        for ln in lines:
+            try:
+                durs.append(probe_duration(tts_line(
+                    ep, ln["text"], ln.get("who", "xiao"),
+                    ln.get("emotion", "neutral"), ln.get("speed", 1.0))))
+            except Exception:
+                pass
+        gap = float(s.get("gap", 0.30))
+        pad = float(s.get("pad", 0.95))
+        speech = sum(durs) + max(0, len(durs) - 1) * gap
+        vpath = video_path(ep, s["id"])
+        cap = probe_duration(vpath) if (vpath and os.path.exists(vpath)) else 9.5
+        dur = max(4.0, min(cap, max(float(s.get("dur") or 5.0), speech + pad)))
+        plan.append((s, dur, lines, durs))
+
+    # 片头卡 / TBC 卡 / 彩蛋 也要进分层，否则分层与成片对不齐。
+    # 片头卡与 TBC 卡只有音乐（make_card 里 bgm volume=0.18），
+    # 彩蛋只有房间底噪（render_egg 里 amb volume=0.55）。
+    head_dur = 3.0
+    tbc_dur = float((spec.get("tbc") or {}).get("seconds", 3.0))
+    egg_dur = 0.0
+    egg = spec.get("egg")
+    if egg:
+        clip = os.path.join(HABITS_DIR, egg["clip"])
+        if os.path.exists(clip):
+            egg_dur = min(8.0, max(4.0, probe_duration(clip)))
+
+    def card_music(dur, out):
+        """卡片音乐段：与 make_card 相同的处理（volume=0.18 + 淡入淡出）。"""
+        r = run([ffmpeg(), "-y", "-v", "error", "-stream_loop", "-1", "-i", bgm,
+                 "-filter_complex", "[0:a]atrim=0:%.2f,volume=0.18,"
+                 "afade=t=in:st=0:d=0.8,afade=t=out:st=%.2f:d=0.8[o]"
+                 % (dur, max(0.0, dur - 0.9)),
+                 "-map", "[o]", "-t", "%.2f" % dur,
+                 "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", out])
+        return r.returncode == 0
+
+    def egg_amb(dur, out):
+        """彩蛋房间底噪段：与 render_egg 相同（amb_egg volume=0.55）。"""
+        amb = os.path.join(audio_dir(ep), "amb_egg.wav")
+        if not os.path.exists(amb):
+            A.write_wav(amb, A.ambience("home", 12.0, seed=7))
+        r = run([ffmpeg(), "-y", "-v", "error", "-stream_loop", "-1", "-i", amb,
+                 "-filter_complex", "[0:a]atrim=0:%.2f,volume=0.55[o]" % dur,
+                 "-map", "[o]", "-t", "%.2f" % dur,
+                 "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", out])
+        return r.returncode == 0
+
+    def silence(dur, out):
+        r = run([ffmpeg(), "-y", "-v", "error", "-f", "lavfi",
+                 "-i", "anullsrc=r=48000:cl=stereo", "-t", "%.2f" % dur,
+                 "-c:a", "pcm_s16le", out])
+        return r.returncode == 0
+
+    for layer in ("voice", "bgm", "amb", "sfx"):
+        parts = []
+        # ── 片头卡 3s：只有音乐
+        head = os.path.join(tmpdir, "%s_head.wav" % layer)
+        ok = False
+        if layer == "bgm":
+            ok = card_music(head_dur, head)
+        elif layer in ("voice", "amb", "sfx"):
+            ok = silence(head_dur, head)
+        if ok:
+            parts.append(head)
+        # ── TBC 卡：只有音乐
+        tbc_p = os.path.join(tmpdir, "%s_tbc.wav" % layer)
+        ok = False
+        if layer == "bgm":
+            ok = card_music(tbc_dur, tbc_p)
+        elif layer in ("voice", "amb", "sfx"):
+            ok = silence(tbc_dur, tbc_p)
+        if ok:
+            parts.append(tbc_p)
+        # ── 26 镜
+        for s, dur, lines, durs in plan:
+            lf = [tts_line(ep, ln["text"], ln.get("who", "xiao"),
+                           ln.get("emotion", "neutral"),
+                           ln.get("speed", 1.0))
+                  for ln in lines]
+            graph = build_audio_graph(ep, s, bgm, dur, lf, durs,
+                                      want_stems=True, audio_base=0,
+                                      only_layer=layer)
+            p = os.path.join(tmpdir, "%s_%02d.wav" % (layer, s["id"]))
+            if graph is None:
+                # 该层在本镜不存在（无台词/无音效/撤掉音乐）→ 写静音
+                r = run([ffmpeg(), "-y", "-v", "error", "-f", "lavfi",
+                         "-i", "anullsrc=r=48000:cl=stereo", "-t", "%.3f" % dur,
+                         "-c:a", "pcm_s16le", p])
+            else:
+                r = run([ffmpeg(), "-y", "-v", "error"] + graph["inputs"] + [
+                    "-filter_complex", ";".join(graph["filters"]),
+                    "-map", "[out]", "-t", "%.3f" % dur,
+                    "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", p])
+            if r.returncode != 0 or not os.path.exists(p):
+                print("  ❌ 镜%02d %s 失败：%s" % (s["id"], layer, (r.stderr or "")[-200:]))
+            else:
+                parts.append(p)
+        # ── 彩蛋：只有房间底噪
+        if egg_dur > 0:
+            egg_p = os.path.join(tmpdir, "%s_egg.wav" % layer)
+            ok = False
+            if layer == "amb":
+                ok = egg_amb(egg_dur, egg_p)
+            elif layer in ("voice", "bgm", "sfx"):
+                ok = silence(egg_dur, egg_p)
+            if ok:
+                parts.append(egg_p)
+        if not parts:
+            continue
+        lst = os.path.join(tmpdir, "%s.txt" % layer)
+        with open(lst, "w", encoding="utf-8") as f:
+            for p in parts:
+                f.write("file '%s'\n" % p.replace("'", "'\\''"))
+        out = os.path.join(outdir, "%s.wav" % layer)
+        r = run([ffmpeg(), "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst,
+                 "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", out])
+        print("  %-6s %s  %.1fs  %.1f MB" % (
+            layer, "✅" if r.returncode == 0 else "❌",
+            probe_duration(out) if os.path.exists(out) else 0,
+            os.path.getsize(out) / 1e6 if os.path.exists(out) else 0))
+
+    # 铺底总轨 = 音乐 + 底噪 + 音效（不含人声），用户直接对着它录
+    bed = os.path.join(outdir, "bed.wav")
+    r = run([ffmpeg(), "-y", "-v", "error",
+             "-i", os.path.join(outdir, "bgm.wav"),
+             "-i", os.path.join(outdir, "amb.wav"),
+             "-i", os.path.join(outdir, "sfx.wav"),
+             "-filter_complex", "[0:a][1:a][2:a]amix=inputs=3:duration=longest:normalize=0,"
+             "alimiter=limit=0.92,aresample=48000[bed]",
+             "-map", "[bed]", "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2", bed])
+    print("  bed    %s  %.1fs  %.1f MB" % (
+        "✅" if r.returncode == 0 else "❌",
+        probe_duration(bed) if os.path.exists(bed) else 0,
+        os.path.getsize(bed) / 1e6 if os.path.exists(bed) else 0))
+    print("分层素材在 %s" % outdir)
+    return 0
+
+
 # ---------------------------------------------------------------- CLI
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["frames", "videos", "audio", "build", "all"])
+    ap.add_argument("cmd", choices=["frames", "videos", "audio", "build", "stems", "all"])
     ap.add_argument("--ep", required=True)
     ap.add_argument("--shots", default="")
     ap.add_argument("--concurrency", type=int, default=3)
@@ -874,6 +1228,8 @@ def main():
         cmd_audio(a)
     if a.cmd in ("build", "all"):
         cmd_build(a)
+    if a.cmd in ("stems", "all"):
+        cmd_stems(a)
     return 0
 
 

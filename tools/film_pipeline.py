@@ -64,6 +64,9 @@ VOICES = {
     "classmate": ("zh-CN-YunxiaNeural", "+8%", "+5Hz"),
     "dougen": ("zh-CN-YunyangNeural", "+14%", "+15Hz"),   # 甲·逗哏
     "penggen": ("zh-CN-YunjianNeural", "+2%", "-25Hz"),   # 乙·捧哏
+    "bianmu": ("zh-CN-YunxiaNeural", "+16%", "+18Hz"),    # 边牧（狗友）
+    "alaska": ("zh-CN-YunjianNeural", "-8%", "-40Hz"),    # 阿拉斯加（狗友）
+    "pup": ("zh-CN-XiaoyiNeural", "+28%", "+55Hz"),       # 小边牧（狗友·幼）
 }
 
 EDGE_TTS = os.path.expanduser("~/XiaoliuerVideoGen/venv/bin/edge-tts")

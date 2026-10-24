@@ -49,6 +49,9 @@ SCENES = {
     "home": "scene_livingroom_01.jpg",
     "campus": "scene_campus_path_01.jpg",
     "field": "scene_campus_field_01.jpg",
+    "gate": "scene_campus_gate_01.jpg",
+    "booth": "scene_club_booth_01.jpg",
+    "dormhall": "scene_dorm_hall_01.jpg",
 }
 
 VOICES = {
@@ -665,6 +668,14 @@ def cmd_build(args):
             print("  镜%02d %.2fs" % (s["id"], d))
         except Exception as e:  # noqa: BLE001
             print("  镜%02d ❌ %s" % (s["id"], e))
+
+    tbc = spec.get("tbc")
+    if tbc:
+        parts.append(make_card([tbc.get("title", "TO BE CONTINUED"),
+                                tbc.get("subtitle", "")],
+                               float(tbc.get("seconds", 3.0)),
+                               os.path.join(tmpdir, "tbc.mp4"), bgm=bgm, title_size=58))
+        print("  TBC 卡")
 
     egg = spec.get("egg")
     if egg:

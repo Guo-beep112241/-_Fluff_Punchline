@@ -35,6 +35,9 @@ SCENES = {
     "home": "scene_livingroom_01.jpg",
     "campus": "scene_campus_path_01.jpg",
     "field": "scene_campus_field_01.jpg",
+    "gate": "scene_campus_gate_01.jpg",
+    "booth": "scene_club_booth_01.jpg",
+    "dormhall": "scene_dorm_hall_01.jpg",
 }
 
 W, H = 1080, 1920
@@ -87,6 +90,10 @@ def trim_alpha(im):
 
 def load_scene(scene, grade="neutral"):
     p = os.path.join(PROJECT, "10_工作素材", "scenes", SCENES[scene])
+    if not os.path.exists(p):
+        # 场景锚点还没生成：用一张中性灰底，保证流水线不中断
+        im = Image.new("RGB", (1080, 1920), (58, 56, 54))
+        return im
     im = Image.open(p).convert("RGB")
     s = max(W / im.width, H / im.height)
     im = im.resize((math.ceil(im.width * s), math.ceil(im.height * s)), Image.LANCZOS)

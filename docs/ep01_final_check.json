@@ -1,0 +1,50 @@
+{
+  "5_每镜4到6秒": {
+    "pass": true,
+    "detail": "26 镜时长区间 4.0–6.0 秒",
+    "bad": []
+  },
+  "6_台词逐字一致": {
+    "pass": true,
+    "detail": "对拍 36 句（script.md 台词表 ⇄ shots.json）",
+    "bad": []
+  },
+  "7_镜25半秒静音": {
+    "pass": false,
+    "detail": "台词结束 127.25s，检出静音段 []",
+    "bad": [
+      "镜25 台词后没检出 ≥0.25s 静音"
+    ]
+  },
+  "1_全片无人类": {
+    "pass": true,
+    "detail": "抽样 18 帧",
+    "bad": []
+  },
+  "3_无狗做人类动作": {
+    "pass": true,
+    "detail": "抽样 18 帧",
+    "bad": []
+  },
+  "4_无可读文字": {
+    "pass": true,
+    "detail": "抽样 18 帧",
+    "bad": []
+  },
+  "2_小六二形象一致": {
+    "pass": true,
+    "detail": "逐镜视觉判定 78 帧（参考图固定 + 外形描述逐字复用）",
+    "bad": []
+  },
+  "8_TBC卡与彩蛋": {
+    "pass": true,
+    "detail": "TBC 卡在 139.90s；彩蛋实拍幼犬在 143.5",
+    "bad": []
+  },
+  "_meta": {
+    "final": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/30_成片/ep01_final_9x16.mp4",
+    "duration": 148.05,
+    "samples": 18,
+    "checked_at": "2026-10-24 15:04:26"
+  }
+}

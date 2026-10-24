@@ -1,0 +1,26 @@
+subject_definitions:
+<Subject 1>: is the reddish-brown and cream Alaskan Malamute in <Picture 2>: a large heavy adult dog with a dense double coat, warm reddish-brown over the head, back and flanks, a broad cream-white blaze down the face, a cream muzzle, a very wide and thick cream chest ruff, dark brown eyes, small erect triangular ears, a big bushy tail and a plain blue nylon collar. From <Picture 2>, fully_preserved - the reddish-brown and cream coat and the heavy build
+<Subject 2>: is the miniature Border Collie puppy in <Picture 3>: a very small young puppy with a fluffy black-and-white coat, a round face, a white blaze and muzzle, big round pale grey-blue eyes, small floppy ears and a small compact body in a blue nylon collar. From <Picture 3>, fully_preserved - the puppy size and the fluffy coat
+<Subject 3>: is a fictional university dormitory room: a grey painted steel bunk bed along the left wall with navy-and-white striped bedding on both bunks, a light wood desk below the window with a silver articulated desk lamp, a chair, a window at the back with sheer pale blue curtains and daylight, a beige wardrobe on the right, a white water dispenser and a beige tile floor. Every printed surface in the room is completely blank, no printing, no writing, no lettering, no readable text anywhere in the frame. From <Picture 1>, fully_preserved - the bunk bed, the striped bedding, the desk with its lamp and the curtained window
+
+summary:
+[reference generation] The Malamute thumps the floor with a front paw while the Border Collie puppy barks from the upper bunk.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - the reddish-brown and cream coat and the heavy build stay exactly as in the reference picture.
+<Subject 2> (appears in [Shot 1]): fully_preserved - the very small puppy size and the fluffy coat stay as in the reference picture.
+<Subject 3> (appears in [Shot 1]): fully_preserved - the bunk bed, the striped bedding, the desk with its lamp and the curtained window stay unchanged.
+
+detailed_description:
+The target video is in realistic photographic style, shot in soft indoor daylight with a neutral white balance. This world contains animals only: no human, no person, no human hand, no human leg and no human shadow appears anywhere in the frame, at any moment. The animals are ordinary four-legged dogs, not exaggerated show-dog versions of their breeds. Only two dogs are fully in the picture: the reddish-brown and cream Alaskan Malamute keeps its heavy double coat, the broad cream chest ruff and the cream face markings, and the miniature Border Collie puppy keeps its small compact body, the fluffy black-and-white coat and its big round eyes. Every printed surface is completely blank, no printing, no writing, no lettering, no readable text anywhere in the frame.
+[Shot 1] [Medium shot of the room, the tile floor in the lower half and the upper bunk running across the top of the frame], [static camera, no camera movement]. The setting is <Subject 3>: the beige tile floor, the grey steel bunk bed with the navy-and-white striped bedding, the light wood desk at the left and the sheer curtain with daylight at the back. Exactly two dogs are in this frame and no other animals: <Subject 1> the reddish-brown and cream Alaskan Malamute sits on the floor in the middle of the frame, body facing the camera, and lifts one heavy cream front paw off the tile and brings it down flat onto the floor, twice, thumping the floor with a paw - not clapping: the paw never meets another paw, never leaves the floor sideways and no foreleg is ever raised above the shoulder. <Subject 2> the miniature Border Collie puppy is on the upper bunk and leans its whole head and shoulders over the bed rail, opens its mouth in a small bark and pulls back. The Malamute's head is turned three-quarters to the side as it calls out, so the lips are seen from the side and the lip movement is not distinctly readable; the puppy's small open mouth is partly hidden by the bed rail. No white dog, no other animal, no person, hand, leg or shadow appears anywhere in the frame.
+<Subject 1> (S1) speaks: <d>[Chinese] 来一段！来一段！</d>
+The voice is a low, loud natural human voice, loud and urging, with the mouth moving with the words; the head stays turned three-quarters to the side so the lips are seen from the side and the lip movement is not distinctly readable.
+<Subject 2> (S1) speaks: <d>[Chinese] 来一段！</d>
+The voice is a small high-pitched babyish natural human voice, with the mouth moving with the words; the puppy's open mouth is partly hidden behind the bed rail.
+
+overall_soundscape:
+Indoor room tone. Two heavy paw thumps on the tile floor, a sharp creak of the bunk-bed rail and one short high bark from the puppy.
+
+non_diegetic_music:
+A sparse ambient bed of light pizzicato plucks over a low drone, quick and small under the room tone.

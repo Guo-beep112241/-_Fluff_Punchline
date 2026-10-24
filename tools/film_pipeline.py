@@ -56,7 +56,8 @@ SCENES = {
 
 VOICES = {
     # who: (edge-tts voice, rate, pitch)
-    "xiao": ("zh-CN-YunxiNeural", "+8%", "+10Hz"),
+    # 基线语速按「相声抢白」的节奏定：甲乙要能在一镜里把两句说完。
+    "xiao": ("zh-CN-YunxiNeural", "+12%", "+10Hz"),
     "jiajia": ("zh-CN-XiaoxiaoNeural", "+14%", "+0Hz"),
     "hengjie": ("zh-CN-XiaoyiNeural", "+0%", "-30Hz"),
     "bingge": ("zh-CN-YunjianNeural", "-6%", "-45Hz"),
@@ -65,11 +66,11 @@ VOICES = {
     "teacher": ("zh-CN-XiaoxiaoNeural", "-2%", "-5Hz"),
     "panel": ("zh-CN-YunjianNeural", "-12%", "-55Hz"),
     "classmate": ("zh-CN-YunxiaNeural", "+8%", "+5Hz"),
-    "dougen": ("zh-CN-YunyangNeural", "+14%", "+15Hz"),   # 甲·逗哏
-    "penggen": ("zh-CN-YunjianNeural", "+2%", "-25Hz"),   # 乙·捧哏
-    "bianmu": ("zh-CN-YunxiaNeural", "+16%", "+18Hz"),    # 边牧（狗友）
-    "alaska": ("zh-CN-YunjianNeural", "-8%", "-40Hz"),    # 阿拉斯加（狗友）
-    "pup": ("zh-CN-XiaoyiNeural", "+28%", "+55Hz"),       # 小边牧（狗友·幼）
+    "dougen": ("zh-CN-YunyangNeural", "+26%", "+15Hz"),   # 甲·逗哏
+    "penggen": ("zh-CN-YunjianNeural", "+20%", "-25Hz"),   # 乙·捧哏
+    "bianmu": ("zh-CN-YunxiaNeural", "+24%", "+18Hz"),    # 边牧（狗友）
+    "alaska": ("zh-CN-YunjianNeural", "+8%", "-40Hz"),    # 阿拉斯加（狗友）
+    "pup": ("zh-CN-XiaoyiNeural", "+26%", "+55Hz"),       # 小边牧（狗友·幼）
 }
 
 EDGE_TTS = os.path.expanduser("~/XiaoliuerVideoGen/venv/bin/edge-tts")
@@ -132,7 +133,17 @@ def frame_path(ep, sid):
 
 
 def video_path(ep, sid):
-    return os.path.join(ep_dir(ep, "shots"), "sh%02d.mp4" % sid)
+    """优先 shNN.mp4；否则找 H3 批量提交的 epNN_shNN_v*_*.mp4。
+
+    不做复制——同一段视频在仓库里存两份会让 Git LFS 体积翻倍。
+    """
+    d = ep_dir(ep, "shots")
+    plain = os.path.join(d, "sh%02d.mp4" % sid)
+    if os.path.exists(plain):
+        return plain
+    import glob as _glob
+    hits = sorted(_glob.glob(os.path.join(d, "ep%s_sh%02d_v*_*.mp4" % (ep.replace("ep", ""), sid))))
+    return hits[-1] if hits else plain
 
 
 def audio_dir(ep):
@@ -369,23 +380,52 @@ def cmd_videos(args):
 
 # ---------------------------------------------------------------- ③ 音频
 
+# edge-tts 每句都自带约 0.12s 前导静音 + 0.35~0.45s 尾部静音。
+# 全片 36 句白占十几秒，而且尾部静音会把下一句往后推，造成「说完一句空半拍」。
+# 这里统一裁掉首尾静音（各留 30~40ms 余量），语速不变，节奏更紧。
+TRIM_AF = (
+    "silenceremove=start_periods=1:start_duration=0.03:start_threshold=-50dB:start_silence=0.03,"
+    "areverse,"
+    "silenceremove=start_periods=1:start_duration=0.05:start_threshold=-50dB:start_silence=0.04,"
+    "areverse"
+)
+
+
+def trim_silence(path):
+    """就地裁掉 TTS 首尾静音。用 .trimmed 标记保证幂等（已裁过的不再动）。"""
+    mk = path + ".trimmed"
+    if os.path.exists(mk):
+        return path
+    tmp = path + ".tmp.mp3"
+    r = run([ffmpeg(), "-hide_banner", "-y", "-i", path, "-af", TRIM_AF,
+             "-c:a", "libmp3lame", "-q:a", "2", tmp])
+    if r.returncode == 0 and os.path.exists(tmp) and os.path.getsize(tmp) > 500:
+        os.replace(tmp, path)
+    elif os.path.exists(tmp):
+        os.remove(tmp)
+    with open(mk, "w") as f:
+        f.write("1")
+    return path
+
+
 def tts_line(ep, text, who, emotion, speed):
     """逐句配音：edge-tts（本地免费、音色稳定、支持中文男少年音）。"""
     voice, rate, pitch = VOICES.get(who, VOICES["xiao"])
     mult = float(speed or 1.0)
     base = int(rate.replace("%", "").replace("+", ""))
-    rate_pct = int(round(base * mult))
+    # speed 是真实语速倍率：1.0 = 基准，1.4 = 再快 40%
+    rate_pct = int(round(base + (mult - 1.0) * 100))
+    rate_pct = max(-30, min(90, rate_pct))
     rate_s = "%+d%%" % rate_pct
     key = "%s_%s" % (who, re.sub(r"[^\w\u4e00-\u9fff]", "", text)[:14])
     path = os.path.join(audio_dir(ep), key + ".mp3")
-    if os.path.exists(path) and os.path.getsize(path) > 1000:
-        return path
-    cmd = [EDGE_TTS, "--voice", voice, "--rate=%s" % rate_s, "--pitch=%s" % pitch,
-           "--text", text, "--write-media", path]
-    r = run(cmd)
-    if r.returncode != 0 or not os.path.exists(path):
-        raise RuntimeError("TTS 失败: %s" % (r.stderr[-300:] or r.stdout[-300:]))
-    return path
+    if not (os.path.exists(path) and os.path.getsize(path) > 1000):
+        cmd = [EDGE_TTS, "--voice", voice, "--rate=%s" % rate_s, "--pitch=%s" % pitch,
+               "--text", text, "--write-media", path]
+        r = run(cmd)
+        if r.returncode != 0 or not os.path.exists(path):
+            raise RuntimeError("TTS 失败: %s" % (r.stderr[-300:] or r.stdout[-300:]))
+    return trim_silence(path)
 
 
 def amb_file(ep, scene, seed):
@@ -435,16 +475,52 @@ def cmd_audio(args):
 
 # ---------------------------------------------------------------- ④ 成片
 
+def _zh_count(s):
+    """「字数」只算正文（汉字/字母/数字），不算标点和空格。"""
+    return len(re.sub(r"[^\w\u4e00-\u9fff]", "", s or ""))
+
+
 def wrap_cn(text, per_line=13):
-    out, cur = [], ""
+    """按每行最多 per_line 个「字」折行。
+
+    先按标点切成语义段，再贪心装箱 —— 避免出现「真实本 / 人」这种把词劈两半的字幕。
+    「字」不计标点，所以「那要是有人不会说相声能来吗？」算 13 字，可以整行放下。
+    """
+    text = (text or "").strip()
+    if not text:
+        return ""
+    if _zh_count(text) <= per_line:
+        return text
+    segs, cur = [], ""
     for ch in text:
         cur += ch
-        if len(cur) >= per_line:
-            out.append(cur)
+        if ch in "，。！？、；：，,!?;:—… ":
+            segs.append(cur)
             cur = ""
     if cur:
-        out.append(cur)
-    return "\n".join(out)
+        segs.append(cur)
+    lines, line = [], ""
+    for seg in segs:
+        if not seg.strip():
+            continue
+        if _zh_count(line) + _zh_count(seg) <= per_line:
+            line += seg
+        else:
+            if line.strip():
+                lines.append(line.rstrip())
+            if _zh_count(seg) <= per_line:
+                line = seg
+            else:
+                buf = ""
+                for ch in seg:
+                    buf += ch
+                    if _zh_count(buf) >= per_line:
+                        lines.append(buf.rstrip())
+                        buf = ""
+                line = buf
+    if line.strip():
+        lines.append(line.rstrip())
+    return "\n".join(lines)
 
 
 def esc_path(p):
@@ -471,10 +547,13 @@ def render_shot(ep, shot, bgm, tmpdir):
             continue
         line_files.append(p)
         line_durs.append(probe_duration(p))
-    speech = sum(line_durs) + max(0, len(line_durs) - 1) * 0.30
+    gap = float(shot.get("gap", 0.30))      # 句与句的抢白间隔
+    pad = float(shot.get("pad", 0.95))      # 台词尾部留白
+    lead = float(shot.get("lead", 0.42))    # 第一句入点
+    speech = sum(line_durs) + max(0, len(line_durs) - 1) * gap
     # 台词更长时自动延长镜头（静帧可无损延长；有视频时最多拉到素材长度）
     cap = (probe_duration(vpath) if have_video else 9.5)
-    dur = max(4.0, min(cap, max(dur_spec, speech + 0.95)))
+    dur = max(4.0, min(cap, max(dur_spec, speech + pad)))
     src_dur = probe_duration(vpath) if have_video else 0.0
 
     # --- 音轨：环境 + 音效 + 台词
@@ -491,14 +570,15 @@ def render_shot(ep, shot, bgm, tmpdir):
 
     for k, name in enumerate([x for x in (shot.get("sfx") or []) if x][:3]):
         sp = sfx_file(ep, name, sid + k)
-        t0 = [0.30, dur * 0.55, dur * 0.80][k]
+        at = shot.get("sfx_at") or []
+        t0 = float(at[k]) if k < len(at) else [0.30, dur * 0.55, dur * 0.80][k]
         inputs += ["-i", sp]
         filters.append("[%d:a]adelay=%d|%d,apad=pad_dur=%.2f,atrim=0:%.3f,volume=0.85[sfx%d]"
                        % (idx, int(t0 * 1000), int(t0 * 1000), dur, dur, k))
         amix_labels.append("[sfx%d]" % k)
         idx += 1
 
-    t_cursor = 0.42
+    t_cursor = lead
     for k, (p, d) in enumerate(zip(line_files, line_durs)):
         if t_cursor + d > dur - 0.15:
             d = max(0.4, dur - 0.15 - t_cursor)
@@ -506,15 +586,32 @@ def render_shot(ep, shot, bgm, tmpdir):
         filters.append("[%d:a]adelay=%d|%d,atrim=0:%.3f,volume=1.0[v%d]"
                        % (idx, int(t_cursor * 1000), int(t_cursor * 1000), d + 0.05, k))
         amix_labels.append("[v%d]" % k)
-        t_cursor += d + 0.30
+        t_cursor += d + gap
         idx += 1
 
     # 「安静两拍」的镜头必须撤掉 BGM（bible/series.md §7.2 第 4 条）
     use_bgm = bgm and shot.get("amb") != "silence"
     if use_bgm:
+        # bgm_until：台词说完就撤掉音乐，只留房间底噪 —— 「安静两拍后反转」
+        bgm_end = dur
+        bu = shot.get("bgm_until")
+        if bu is not None:
+            bgm_end = max(0.8, min(dur, float(bu)))
+        gain = float(shot.get("bgm_gain", 0.16))
+        # bgm_gap：把某个时间窗的音乐挖空 —— 「说完留半秒空，只留房间底噪」
+        gate = "1"
+        bg = shot.get("bgm_gap")
+        if bg:
+            gate = "if(between(t,%.3f,%.3f),0,1)" % (float(bg[0]), float(bg[1]))
         inputs += ["-stream_loop", "-1", "-i", bgm]
-        filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=0.16,afade=t=in:st=0:d=0.6,"
-                       "afade=t=out:st=%.2f:d=0.6[bgm]" % (idx, dur, max(0, dur - 0.7)))
+        if bgm_end < dur - 0.05:
+            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
+                           "afade=t=out:st=%.2f:d=0.35,volume='%s'[bgm]"
+                           % (idx, bgm_end, gain, max(0, bgm_end - 0.4), gate))
+        else:
+            filters.append("[%d:a]atrim=0:%.3f,asetpts=N/SR/TB,volume=%.3f,afade=t=in:st=0:d=0.6,"
+                           "afade=t=out:st=%.2f:d=0.6,volume='%s'[bgm]"
+                           % (idx, dur, gain, max(0, dur - 0.7), gate))
         amix_labels.append("[bgm]")
         idx += 1
 
@@ -545,18 +642,34 @@ def render_shot(ep, shot, bgm, tmpdir):
         vin = "0:v"
 
     # --- 字幕
+    # 多句台词的镜：逐句时间窗字幕（一句一屏），而不是把整镜台词糊在一起
     sub = shot.get("caption")
     if not sub and lines:
         sub = "".join(x["text"] for x in lines)
     text_path = None
     if sub:
-        text_path = os.path.join(tmpdir, "sub%02d.txt" % sid)
-        with open(text_path, "w", encoding="utf-8") as f:
-            f.write(wrap_cn(sub, 13))
-        filters.append("[v]drawtext=fontfile='%s':textfile='%s':fontcolor=white:fontsize=46:"
-                       "line_spacing=10:borderw=3:bordercolor=black@0.75:"
-                       "x=(w-text_w)/2:y=h-420[vsub]" % (FONT, esc_path(text_path)))
-        vout = "[vsub]"
+        prev = "[v]"
+        if not shot.get("caption") and len(lines) > 1:
+            for k, ln in enumerate(lines):
+                t0 = lead + sum(line_durs[:k]) + k * gap
+                t1 = t0 + line_durs[k] + 0.20
+                text_path = os.path.join(tmpdir, "sub%02d_%d.txt" % (sid, k))
+                with open(text_path, "w", encoding="utf-8") as f:
+                    f.write(wrap_cn(ln["text"], 13))
+                filters.append("%sdrawtext=fontfile='%s':textfile='%s':fontcolor=white:fontsize=46:"
+                               "line_spacing=10:borderw=3:bordercolor=black@0.75:"
+                               "x=(w-text_w)/2:y=h-420:enable='between(t,%.3f,%.3f)'[vsub%d]"
+                               % (prev, FONT, esc_path(text_path), max(0.0, t0), t1, k))
+                prev = "[vsub%d]" % k
+        else:
+            text_path = os.path.join(tmpdir, "sub%02d.txt" % sid)
+            with open(text_path, "w", encoding="utf-8") as f:
+                f.write(wrap_cn(sub, 13))
+            filters.append("[v]drawtext=fontfile='%s':textfile='%s':fontcolor=white:fontsize=46:"
+                           "line_spacing=10:borderw=3:bordercolor=black@0.75:"
+                           "x=(w-text_w)/2:y=h-420[vsub]" % (FONT, esc_path(text_path)))
+            prev = "[vsub]"
+        vout = prev
     else:
         vout = "[v]"
 
@@ -685,9 +798,10 @@ def cmd_build(args):
             total += d
             print("  彩蛋 %.2fs" % d)
 
-    end = make_card(["本片画面由 AI 生成", "小六二是一只真实存在的萨摩耶", "《还没出师》S1"],
-                    4.0, os.path.join(tmpdir, "end.mp4"), bgm=bgm, title_size=52)
-    parts.append(end)
+    if spec.get("end_card", True):
+        end = make_card(["本片画面由 AI 生成", "小六二是一只真实存在的萨摩耶", "《还没出师》S1"],
+                        4.0, os.path.join(tmpdir, "end.mp4"), bgm=bgm, title_size=52)
+        parts.append(end)
 
     lst = os.path.join(tmpdir, "concat.txt")
     with open(lst, "w", encoding="utf-8") as f:
@@ -706,13 +820,32 @@ def cmd_build(args):
         r = run(cmd)
     if r.returncode != 0:
         raise SystemExit("合成失败：%s" % r.stderr[-800:])
-    # 统一响度（短视频平台目标 ≈ -16 LUFS）
+    # 统一响度（短视频平台目标 -16 LUFS / 真峰 ≤ -1.5 dBTP）
+    #
+    # 为什么必须先压缩：原始混音是「对白脉冲 + 极轻房间底噪」，
+    # 测出来 input_i=-25.2 LUFS 而 input_tp=+2.3 dBFS（波峰因数 27dB）。
+    # 直接 loudnorm 会把限制器逼到极限，压完峰平均又掉回 -17 LUFS。
+    # 加一级 acompressor 把波峰因数压下来，再 loudnorm + alimiter，才能同时达标。
+    #   压缩器+单遍loudnorm+限制器 → 实测 -16.1 LUFS / 真峰 -1.9 dBFS
+    #   两遍 loudnorm（linear=true）→ -16.1 LUFS 但真峰 -0.0 dBFS（AAC 过冲顶不住），故用单遍
     tmp_out = final.replace(".mp4", ".loud.mp4")
+    COMP = "acompressor=threshold=-30dB:ratio=4:attack=3:release=120:makeup=8"
+    af = ("%s,loudnorm=I=-16:TP=-1.5:LRA=11,"
+          "alimiter=limit=0.749:level=disabled:attack=1:release=50" % COMP)
     r2 = run([ffmpeg(), "-y", "-v", "error", "-i", final, "-c:v", "copy",
-              "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k",
+              "-af", af, "-c:a", "aac", "-b:a", "192k",
               "-ar", "48000", "-ac", "2", tmp_out])
-    if r2.returncode == 0 and os.path.getsize(tmp_out) > 100000:
+    if r2.returncode == 0 and os.path.exists(tmp_out) and os.path.getsize(tmp_out) > 100000:
         os.replace(tmp_out, final)
+    else:
+        print("   ⚠️ 响度归一失败（rc=%s）：%s" % (r2.returncode, (r2.stderr or "")[-300:]))
+    # 回读实测响度，确认达标
+    chk = run([ffmpeg(), "-hide_banner", "-nostats", "-i", final,
+               "-af", "ebur128=peak=true", "-f", "null", "-"])
+    mi = re.search(r"^\s*I:\s+(-?[\d.]+) LUFS", chk.stderr or "", re.M)
+    mp = re.search(r"True peak:\s*\n\s*Peak:\s+(-?[\d.]+) dBFS", chk.stderr or "")
+    print("   实测响度：%s LUFS  真峰 %s dBFS" % (
+        mi.group(1) if mi else "?", mp.group(1) if mp else "?"))
     dur = probe_duration(final)
     print("成片 %s  %.1fs  %.1f MB" % (final, dur, os.path.getsize(final) / 1e6))
     return 0

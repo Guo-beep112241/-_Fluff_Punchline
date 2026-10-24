@@ -12,3 +12,7 @@
 *.mov   filter=lfs diff=lfs merge=lfs -text
 *.heic  filter=lfs diff=lfs merge=lfs -text
 *.heif  filter=lfs diff=lfs merge=lfs -text
+# 音频也要走 LFS。分层素材（bed/voice/bgm/amb/sfx.wav）单轨就有 28MB，
+# 5 个共 124MB —— plain git 会在每次改版时完整再存一份。
+*.wav   filter=lfs diff=lfs merge=lfs -text
+*.mp3   filter=lfs diff=lfs merge=lfs -text

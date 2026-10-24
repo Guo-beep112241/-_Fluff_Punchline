@@ -242,6 +242,33 @@
       "delivered_at_cst": "2026-10-24 07:44:01 CST",
       "delivered_file": "/Users/guojiayuan/Library/Mobile Documents/com~apple~CloudDocs/本机迁移/Movies/Xiaoliuer/20_生成结果/ep01/probe/hailuo_pool_probe.mp4",
       "delivered_bytes": 370225
+    },
+    "455739178529192": {
+      "model": "MiniMax-H3",
+      "mode": "Ref2VA",
+      "episode": "ep01",
+      "shot": 2,
+      "duration_s": 5,
+      "ratio": "9:16",
+      "resolution": "768P",
+      "output_file": "20_生成结果/ep01/shots/ep01_sh02_v1_768p.mp4",
+      "purpose": "ep01 / 镜 02",
+      "submitted_at_ms": 1792817402700,
+      "submitted_at_cst": "2026-10-24 12:50:02 CST",
+      "terminal_status": "submitted",
+      "reference_images": [
+        "x6_adult_stand_front_01.jpg",
+        "scene_campus_noticeboard_01.jpg",
+        "x6_adult_face_threequarter_01.jpg"
+      ],
+      "reference_videos": [],
+      "prompt_file": "episodes/ep01/prompts/sh02.md",
+      "submitted_prompt_snapshot": "episodes/ep01/prompts/submitted/ep01_sh02_20261024-125002.txt",
+      "submitted_prompt_sha256": "fe475dbd4ed86c2c5c7df43fe216f961c1bfe96d542c36745876973418af1d3d",
+      "last_query_at_ms": 1792817402700,
+      "last_query_at_cst": "2026-10-24 12:50:02 CST",
+      "last_error": "",
+      "delivery_retry_count": 0
     }
   }
 }
